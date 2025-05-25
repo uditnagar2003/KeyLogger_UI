@@ -28,212 +28,221 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Stop_Button = new System.Windows.Forms.Button();
-            this.Start_Button = new System.Windows.Forms.Button();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.Task_Label = new System.Windows.Forms.Label();
-            this.Percentage = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Procees_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Process_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bytes_Written = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.SuspendLayout();
+            Stop_Button = new Button();
+            Start_Button = new Button();
+            Percentage = new Label();
+            panel1 = new Panel();
+            Input_Box = new RichTextBox();
+            label1 = new Label();
+            panel2 = new Panel();
+            Process_Scanned = new DataGridView();
+            Procees_Id = new DataGridViewTextBoxColumn();
+            Process_Name = new DataGridViewTextBoxColumn();
+            Bytes_Written = new DataGridViewTextBoxColumn();
+            PCC = new DataGridViewTextBoxColumn();
+            label2 = new Label();
+            statusStrip1 = new StatusStrip();
+            Task_Label = new ToolStripStatusLabel();
+            progressBar1 = new ToolStripProgressBar();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)Process_Scanned).BeginInit();
+            statusStrip1.SuspendLayout();
+            SuspendLayout();
             // 
             // Stop_Button
             // 
-            this.Stop_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
-            this.Stop_Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Stop_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Stop_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Stop_Button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
-            this.Stop_Button.Location = new System.Drawing.Point(247, 12);
-            this.Stop_Button.Name = "Stop_Button";
-            this.Stop_Button.Size = new System.Drawing.Size(170, 39);
-            this.Stop_Button.TabIndex = 28;
-            this.Stop_Button.Text = "Stop Detection";
-            this.Stop_Button.UseVisualStyleBackColor = false;
+            Stop_Button.BackColor = Color.FromArgb(0, 180, 216);
+            Stop_Button.Cursor = Cursors.Hand;
+            Stop_Button.FlatStyle = FlatStyle.Flat;
+            Stop_Button.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            Stop_Button.ForeColor = Color.FromArgb(202, 240, 248);
+            Stop_Button.Location = new Point(288, 14);
+            Stop_Button.Margin = new Padding(4, 3, 4, 3);
+            Stop_Button.Name = "Stop_Button";
+            Stop_Button.Size = new Size(198, 45);
+            Stop_Button.TabIndex = 28;
+            Stop_Button.Text = "Stop Detection";
+            Stop_Button.UseVisualStyleBackColor = false;
+            Stop_Button.Click += Stop_Button_Click;
             // 
             // Start_Button
             // 
-            this.Start_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
-            this.Start_Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Start_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Start_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Start_Button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
-            this.Start_Button.Location = new System.Drawing.Point(47, 12);
-            this.Start_Button.Name = "Start_Button";
-            this.Start_Button.Size = new System.Drawing.Size(176, 39);
-            this.Start_Button.TabIndex = 29;
-            this.Start_Button.Text = "Start Detection";
-            this.Start_Button.UseVisualStyleBackColor = false;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
-            this.progressBar1.Location = new System.Drawing.Point(12, 66);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(748, 23);
-            this.progressBar1.TabIndex = 30;
-            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
-            // 
-            // Task_Label
-            // 
-            this.Task_Label.AutoSize = true;
-            this.Task_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Task_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
-            this.Task_Label.Location = new System.Drawing.Point(14, 97);
-            this.Task_Label.Margin = new System.Windows.Forms.Padding(5);
-            this.Task_Label.Name = "Task_Label";
-            this.Task_Label.Padding = new System.Windows.Forms.Padding(3);
-            this.Task_Label.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Task_Label.Size = new System.Drawing.Size(258, 31);
-            this.Task_Label.TabIndex = 31;
-            this.Task_Label.Text = "Current Task being Done";
-            this.Task_Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            Start_Button.BackColor = Color.FromArgb(0, 180, 216);
+            Start_Button.Cursor = Cursors.Hand;
+            Start_Button.FlatStyle = FlatStyle.Flat;
+            Start_Button.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            Start_Button.ForeColor = Color.FromArgb(202, 240, 248);
+            Start_Button.Location = new Point(55, 14);
+            Start_Button.Margin = new Padding(4, 3, 4, 3);
+            Start_Button.Name = "Start_Button";
+            Start_Button.Size = new Size(205, 45);
+            Start_Button.TabIndex = 29;
+            Start_Button.Text = "Start Detection";
+            Start_Button.UseVisualStyleBackColor = false;
+            Start_Button.Click += Start_Button_Click;
             // 
             // Percentage
             // 
-            this.Percentage.AutoSize = true;
-            this.Percentage.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Percentage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
-            this.Percentage.Location = new System.Drawing.Point(632, 27);
-            this.Percentage.Margin = new System.Windows.Forms.Padding(5);
-            this.Percentage.Name = "Percentage";
-            this.Percentage.Padding = new System.Windows.Forms.Padding(3);
-            this.Percentage.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Percentage.Size = new System.Drawing.Size(128, 31);
-            this.Percentage.TabIndex = 32;
-            this.Percentage.Text = "Percentage";
-            this.Percentage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Percentage.Click += new System.EventHandler(this.Percentage_Click);
+            Percentage.AutoSize = true;
+            Percentage.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            Percentage.ForeColor = Color.FromArgb(0, 180, 216);
+            Percentage.Location = new Point(737, 31);
+            Percentage.Margin = new Padding(6);
+            Percentage.Name = "Percentage";
+            Percentage.Padding = new Padding(4, 3, 4, 3);
+            Percentage.RightToLeft = RightToLeft.No;
+            Percentage.Size = new Size(130, 31);
+            Percentage.TabIndex = 32;
+            Percentage.Text = "Percentage";
+            Percentage.TextAlign = ContentAlignment.MiddleLeft;
+            Percentage.Click += Percentage_Click;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.richTextBox1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(19, 136);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(279, 302);
-            this.panel1.TabIndex = 33;
+            panel1.Controls.Add(Input_Box);
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(22, 157);
+            panel1.Margin = new Padding(4, 3, 4, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(326, 348);
+            panel1.TabIndex = 33;
             // 
-            // panel2
+            // Input_Box
             // 
-            this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(304, 136);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(456, 302);
-            this.panel2.TabIndex = 34;
+            Input_Box.Location = new Point(12, 51);
+            Input_Box.Margin = new Padding(4, 3, 4, 3);
+            Input_Box.Name = "Input_Box";
+            Input_Box.Size = new Size(310, 282);
+            Input_Box.TabIndex = 38;
+            Input_Box.Text = "";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
-            this.label1.Location = new System.Drawing.Point(5, 5);
-            this.label1.Margin = new System.Windows.Forms.Padding(5);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(3);
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label1.Size = new System.Drawing.Size(143, 31);
-            this.label1.TabIndex = 35;
-            this.label1.Text = "Text Inputted";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(0, 180, 216);
+            label1.Location = new Point(6, 6);
+            label1.Margin = new Padding(6);
+            label1.Name = "label1";
+            label1.Padding = new Padding(4, 3, 4, 3);
+            label1.RightToLeft = RightToLeft.No;
+            label1.Size = new Size(145, 31);
+            label1.TabIndex = 35;
+            label1.Text = "Text Inputted";
+            label1.TextAlign = ContentAlignment.MiddleLeft;
+            label1.Click += label1_Click;
             // 
-            // label2
+            // panel2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
-            this.label2.Location = new System.Drawing.Point(5, 5);
-            this.label2.Margin = new System.Windows.Forms.Padding(5);
-            this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(3);
-            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label2.Size = new System.Drawing.Size(265, 31);
-            this.label2.TabIndex = 36;
-            this.label2.Text = "Process Being Processed";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            panel2.Controls.Add(Process_Scanned);
+            panel2.Controls.Add(label2);
+            panel2.Location = new Point(355, 157);
+            panel2.Margin = new Padding(4, 3, 4, 3);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(532, 348);
+            panel2.TabIndex = 34;
             // 
-            // richTextBox1
+            // Process_Scanned
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(10, 44);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(266, 245);
-            this.richTextBox1.TabIndex = 38;
-            this.richTextBox1.Text = "";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Procees_Id,
-            this.Process_Name,
-            this.Bytes_Written,
-            this.PCC});
-            this.dataGridView1.Location = new System.Drawing.Point(10, 44);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(443, 255);
-            this.dataGridView1.TabIndex = 37;
+            Process_Scanned.AllowUserToDeleteRows = false;
+            Process_Scanned.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            Process_Scanned.Columns.AddRange(new DataGridViewColumn[] { Procees_Id, Process_Name, Bytes_Written, PCC });
+            Process_Scanned.Location = new Point(12, 51);
+            Process_Scanned.Margin = new Padding(4, 3, 4, 3);
+            Process_Scanned.Name = "Process_Scanned";
+            Process_Scanned.ReadOnly = true;
+            Process_Scanned.Size = new Size(517, 294);
+            Process_Scanned.TabIndex = 37;
             // 
             // Procees_Id
             // 
-            this.Procees_Id.HeaderText = "Process Id";
-            this.Procees_Id.Name = "Procees_Id";
-            this.Procees_Id.ReadOnly = true;
+            Procees_Id.HeaderText = "Process Id";
+            Procees_Id.Name = "Procees_Id";
+            Procees_Id.ReadOnly = true;
             // 
             // Process_Name
             // 
-            this.Process_Name.HeaderText = "Process Name";
-            this.Process_Name.Name = "Process_Name";
-            this.Process_Name.ReadOnly = true;
+            Process_Name.HeaderText = "Process Name";
+            Process_Name.Name = "Process_Name";
+            Process_Name.ReadOnly = true;
             // 
             // Bytes_Written
             // 
-            this.Bytes_Written.HeaderText = "Bytes Written";
-            this.Bytes_Written.Name = "Bytes_Written";
-            this.Bytes_Written.ReadOnly = true;
+            Bytes_Written.HeaderText = "Bytes Written";
+            Bytes_Written.Name = "Bytes_Written";
+            Bytes_Written.ReadOnly = true;
             // 
             // PCC
             // 
-            this.PCC.HeaderText = "PCC";
-            this.PCC.Name = "PCC";
-            this.PCC.ReadOnly = true;
+            PCC.HeaderText = "PCC";
+            PCC.Name = "PCC";
+            PCC.ReadOnly = true;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.FromArgb(0, 180, 216);
+            label2.Location = new Point(6, 6);
+            label2.Margin = new Padding(6);
+            label2.Name = "label2";
+            label2.Padding = new Padding(4, 3, 4, 3);
+            label2.RightToLeft = RightToLeft.No;
+            label2.Size = new Size(267, 31);
+            label2.TabIndex = 36;
+            label2.Text = "Process Being Processed";
+            label2.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // statusStrip1
+            // 
+            statusStrip1.AutoSize = false;
+            statusStrip1.Dock = DockStyle.None;
+            statusStrip1.Items.AddRange(new ToolStripItem[] { Task_Label, progressBar1 });
+            statusStrip1.Location = new Point(22, 78);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(862, 35);
+            statusStrip1.TabIndex = 38;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // Task_Label
+            // 
+            Task_Label.AutoSize = false;
+            Task_Label.Name = "Task_Label";
+            Task_Label.Size = new Size(300, 30);
+            Task_Label.Text = "toolStripStatusLabel1";
+            // 
+            // progressBar1
+            // 
+            progressBar1.AutoSize = false;
+            progressBar1.Name = "progressBar1";
+            progressBar1.Size = new Size(530, 29);
             // 
             // ScanForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(773, 450);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.Percentage);
-            this.Controls.Add(this.Task_Label);
-            this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.Start_Button);
-            this.Controls.Add(this.Stop_Button);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ScanForm";
-            this.Text = "ScanForm";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(902, 519);
+            Controls.Add(statusStrip1);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
+            Controls.Add(Percentage);
+            Controls.Add(Start_Button);
+            Controls.Add(Stop_Button);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "ScanForm";
+            Text = "ScanForm";
+            Load += ScanForm_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)Process_Scanned).EndInit();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
@@ -241,18 +250,19 @@
 
         private System.Windows.Forms.Button Stop_Button;
         private System.Windows.Forms.Button Start_Button;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Label Task_Label;
         private System.Windows.Forms.Label Percentage;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.RichTextBox Input_Box;
+        private System.Windows.Forms.DataGridView Process_Scanned;
         private System.Windows.Forms.DataGridViewTextBoxColumn Procees_Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Process_Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Bytes_Written;
         private System.Windows.Forms.DataGridViewTextBoxColumn PCC;
         private System.Windows.Forms.Label label2;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel Task_Label;
+        private ToolStripProgressBar progressBar1;
     }
 }
