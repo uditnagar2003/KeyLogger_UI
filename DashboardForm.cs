@@ -42,7 +42,7 @@ namespace KLDS
 
         private void Scan_Button_Click(object sender, EventArgs e)
         {
-            loadform(new ScanForm());
+            loadform(new ScanForm(this));
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -52,12 +52,9 @@ namespace KLDS
 
         private void Logout_Button_Click(object sender, EventArgs e)
         {
-            loadform(new DetectionResultActionForm());
+            //loadform(new DetectionResultActionForm());
         }
 
-        private void mainpanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+       
     }
 }

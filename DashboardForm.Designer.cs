@@ -185,7 +185,7 @@
             mainpanel.Name = "mainpanel";
             mainpanel.Size = new Size(908, 627);
             mainpanel.TabIndex = 6;
-            mainpanel.Paint += mainpanel_Paint;
+           
             // 
             // DashboardForm
             // 
