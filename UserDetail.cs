@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Client_Library;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,14 @@ namespace KLDS
         public UserDetail()
         {
             InitializeComponent();
+            INitializeTextbox();
+        }
+
+        private void INitializeTextbox()
+        {
+            User_id.Text = User_Session.UserId.ToString();// User_Session.UserId.ToString();
+            User_Name.Text = User_Session.Name;
+            EMail.Text = User_Session.Email;
         }
 
         private void mainpanel_Paint(object sender, PaintEventArgs e)
@@ -38,6 +47,21 @@ namespace KLDS
         }
 
         private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UserDetail_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Edit_Button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Save_Button_Click(object sender, EventArgs e)
         {
 
         }

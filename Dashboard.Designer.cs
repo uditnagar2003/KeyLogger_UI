@@ -28,252 +28,413 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Process_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Process_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Detection_Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Action = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
+            User_id = new Label();
+            User_Name = new Label();
+            Key_Log = new DataGridView();
+            Process_Id = new DataGridViewTextBoxColumn();
+            Process_Name = new DataGridViewTextBoxColumn();
+            Process_Path = new DataGridViewTextBoxColumn();
+            Detection_Time = new DataGridViewTextBoxColumn();
+            Action = new DataGridViewTextBoxColumn();
+            panel1 = new Panel();
+            panel4 = new Panel();
+            pictureBox3 = new PictureBox();
+            Suspended = new TextBox();
+            textBox6 = new TextBox();
+            panel3 = new Panel();
+            pictureBox2 = new PictureBox();
+            Active = new TextBox();
+            textBox4 = new TextBox();
+            panel2 = new Panel();
+            pictureBox1 = new PictureBox();
+            Total = new TextBox();
+            textBox1 = new TextBox();
+            button1 = new Button();
+            label1 = new Label();
+            label2 = new Label();
+            ((System.ComponentModel.ISupportInitialize)Key_Log).BeginInit();
+            panel1.SuspendLayout();
+            panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
-            // label2
+            // User_id
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
-            this.label2.Location = new System.Drawing.Point(287, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(178, 37);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "DashBoard";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            User_id.AutoSize = true;
+            User_id.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            User_id.ForeColor = Color.FromArgb(0, 180, 216);
+            User_id.Location = new Point(189, 87);
+            User_id.Margin = new Padding(6);
+            User_id.Name = "User_id";
+            User_id.Padding = new Padding(4, 3, 4, 3);
+            User_id.RightToLeft = RightToLeft.No;
+            User_id.Size = new Size(8, 31);
+            User_id.TabIndex = 14;
+            User_id.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label4
+            // User_Name
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
-            this.label4.Location = new System.Drawing.Point(54, 75);
-            this.label4.Margin = new System.Windows.Forms.Padding(5);
-            this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(3);
-            this.label4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label4.Size = new System.Drawing.Size(98, 31);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "User Id :";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            User_Name.AutoSize = true;
+            User_Name.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            User_Name.ForeColor = Color.FromArgb(0, 180, 216);
+            User_Name.Location = new Point(509, 87);
+            User_Name.Margin = new Padding(6);
+            User_Name.Name = "User_Name";
+            User_Name.Padding = new Padding(0, 3, 4, 3);
+            User_Name.RightToLeft = RightToLeft.No;
+            User_Name.Size = new Size(4, 31);
+            User_Name.TabIndex = 16;
+            User_Name.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label1
+            // Key_Log
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
-            this.label1.Location = new System.Drawing.Point(162, 75);
-            this.label1.Margin = new System.Windows.Forms.Padding(5);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(3);
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label1.Size = new System.Drawing.Size(98, 31);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "User Id :";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
-            this.label3.Location = new System.Drawing.Point(289, 75);
-            this.label3.Margin = new System.Windows.Forms.Padding(5);
-            this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(3);
-            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label3.Size = new System.Drawing.Size(137, 31);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "User Name :";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
-            this.label5.Location = new System.Drawing.Point(436, 75);
-            this.label5.Margin = new System.Windows.Forms.Padding(5);
-            this.label5.Name = "label5";
-            this.label5.Padding = new System.Windows.Forms.Padding(3);
-            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label5.Size = new System.Drawing.Size(98, 31);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "User Id :";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
-            this.label6.Location = new System.Drawing.Point(54, 116);
-            this.label6.Margin = new System.Windows.Forms.Padding(5);
-            this.label6.Name = "label6";
-            this.label6.Padding = new System.Windows.Forms.Padding(3);
-            this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label6.Size = new System.Drawing.Size(109, 31);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "Filter By :";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Default",
-            "Ignored",
-            "Suspended"});
-            this.comboBox1.Location = new System.Drawing.Point(167, 154);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(135, 21);
-            this.comboBox1.Sorted = true;
-            this.comboBox1.TabIndex = 18;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
-            this.label7.Location = new System.Drawing.Point(163, 120);
-            this.label7.Margin = new System.Windows.Forms.Padding(5);
-            this.label7.Name = "label7";
-            this.label7.Padding = new System.Windows.Forms.Padding(3);
-            this.label7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label7.Size = new System.Drawing.Size(62, 26);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Status";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
-            this.label8.Location = new System.Drawing.Point(353, 120);
-            this.label8.Margin = new System.Windows.Forms.Padding(5);
-            this.label8.Name = "label8";
-            this.label8.Padding = new System.Windows.Forms.Padding(3);
-            this.label8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label8.Size = new System.Drawing.Size(50, 26);
-            this.label8.TabIndex = 20;
-            this.label8.Text = "Date";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(357, 155);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(147, 20);
-            this.dateTimePicker1.TabIndex = 21;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Process_Id,
-            this.Process_Name,
-            this.Detection_Time,
-            this.Action,
-            this.Status});
-            this.dataGridView1.Location = new System.Drawing.Point(59, 195);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(543, 215);
-            this.dataGridView1.TabIndex = 22;
+            Key_Log.AllowUserToAddRows = false;
+            Key_Log.AllowUserToOrderColumns = true;
+            Key_Log.AllowUserToResizeColumns = false;
+            Key_Log.AllowUserToResizeRows = false;
+            Key_Log.BackgroundColor = Color.FromArgb(15, 23, 42);
+            Key_Log.BorderStyle = BorderStyle.None;
+            Key_Log.CellBorderStyle = DataGridViewCellBorderStyle.SunkenHorizontal;
+            Key_Log.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(15, 23, 42);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(15, 23, 42);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            Key_Log.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            Key_Log.ColumnHeadersHeight = 50;
+            Key_Log.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            Key_Log.Columns.AddRange(new DataGridViewColumn[] { Process_Id, Process_Name, Process_Path, Detection_Time, Action });
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Semilight", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(15, 23, 42);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(15, 23, 42);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            Key_Log.DefaultCellStyle = dataGridViewCellStyle2;
+            Key_Log.EnableHeadersVisualStyles = false;
+            Key_Log.GridColor = Color.FromArgb(15, 23, 42);
+            Key_Log.Location = new Point(17, 241);
+            Key_Log.Margin = new Padding(4, 3, 4, 3);
+            Key_Log.MultiSelect = false;
+            Key_Log.Name = "Key_Log";
+            Key_Log.ReadOnly = true;
+            Key_Log.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            Key_Log.RowHeadersVisible = false;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(15, 23, 42);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI Semilight", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(30, 41, 59);
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            Key_Log.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            Key_Log.RowTemplate.Height = 50;
+            Key_Log.RowTemplate.ReadOnly = true;
+            Key_Log.ScrollBars = ScrollBars.Vertical;
+            Key_Log.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            Key_Log.Size = new Size(883, 279);
+            Key_Log.TabIndex = 22;
             // 
             // Process_Id
             // 
-            this.Process_Id.HeaderText = "Process Id";
-            this.Process_Id.Name = "Process_Id";
-            this.Process_Id.ReadOnly = true;
+            Process_Id.HeaderText = "Process Id";
+            Process_Id.Name = "Process_Id";
+            Process_Id.ReadOnly = true;
+            Process_Id.Width = 108;
             // 
             // Process_Name
             // 
-            this.Process_Name.HeaderText = "Process Name";
-            this.Process_Name.Name = "Process_Name";
-            this.Process_Name.ReadOnly = true;
+            Process_Name.HeaderText = "Process Name";
+            Process_Name.Name = "Process_Name";
+            Process_Name.ReadOnly = true;
+            Process_Name.Width = 158;
+            // 
+            // Process_Path
+            // 
+            Process_Path.HeaderText = "Process Path";
+            Process_Path.Name = "Process_Path";
+            Process_Path.ReadOnly = true;
+            Process_Path.Width = 309;
             // 
             // Detection_Time
             // 
-            this.Detection_Time.HeaderText = "Detection Time";
-            this.Detection_Time.Name = "Detection_Time";
-            this.Detection_Time.ReadOnly = true;
+            Detection_Time.HeaderText = "Detection Time";
+            Detection_Time.Name = "Detection_Time";
+            Detection_Time.ReadOnly = true;
+            Detection_Time.Width = 128;
             // 
             // Action
             // 
-            this.Action.HeaderText = "Action";
-            this.Action.Name = "Action";
-            this.Action.ReadOnly = true;
+            Action.HeaderText = "Action";
+            Action.Name = "Action";
+            Action.ReadOnly = true;
+            Action.Width = 128;
             // 
-            // Status
+            // panel1
             // 
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
+            panel1.BackColor = Color.FromArgb(15, 23, 42);
+            panel1.Controls.Add(panel4);
+            panel1.Controls.Add(panel3);
+            panel1.Controls.Add(panel2);
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(label2);
+            panel1.Dock = DockStyle.Top;
+            panel1.ForeColor = Color.White;
+            panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(900, 238);
+            panel1.TabIndex = 23;
+            panel1.Paint += panel1_Paint;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.FromArgb(30, 41, 59);
+            panel4.Controls.Add(pictureBox3);
+            panel4.Controls.Add(Suspended);
+            panel4.Controls.Add(textBox6);
+            panel4.Location = new Point(624, 99);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(250, 100);
+            panel4.TabIndex = 30;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(199, 29);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(48, 50);
+            pictureBox3.TabIndex = 32;
+            pictureBox3.TabStop = false;
+            // 
+            // Suspended
+            // 
+            Suspended.BackColor = Color.FromArgb(30, 41, 59);
+            Suspended.BorderStyle = BorderStyle.None;
+            Suspended.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            Suspended.ForeColor = Color.White;
+            Suspended.Location = new Point(13, 29);
+            Suspended.Name = "Suspended";
+            Suspended.Size = new Size(100, 33);
+            Suspended.TabIndex = 29;
+            Suspended.Text = "50";
+            // 
+            // textBox6
+            // 
+            textBox6.BackColor = Color.FromArgb(30, 41, 59);
+            textBox6.BorderStyle = BorderStyle.None;
+            textBox6.Font = new Font("Segoe UI Semilight", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            textBox6.ForeColor = Color.White;
+            textBox6.Location = new Point(13, 16);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(100, 16);
+            textBox6.TabIndex = 28;
+            textBox6.Text = "Suspended";
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(30, 41, 59);
+            panel3.Controls.Add(pictureBox2);
+            panel3.Controls.Add(Active);
+            panel3.Controls.Add(textBox4);
+            panel3.Location = new Point(333, 99);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(250, 100);
+            panel3.TabIndex = 30;
+            panel3.Paint += panel3_Paint;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(199, 29);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(48, 50);
+            pictureBox2.TabIndex = 31;
+            pictureBox2.TabStop = false;
+            // 
+            // Active
+            // 
+            Active.BackColor = Color.FromArgb(30, 41, 59);
+            Active.BorderStyle = BorderStyle.None;
+            Active.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            Active.ForeColor = Color.White;
+            Active.Location = new Point(13, 29);
+            Active.Margin = new Padding(0);
+            Active.Name = "Active";
+            Active.Size = new Size(100, 33);
+            Active.TabIndex = 29;
+            Active.Text = "50";
+            Active.TextChanged += textBox3_TextChanged;
+            // 
+            // textBox4
+            // 
+            textBox4.BackColor = Color.FromArgb(30, 41, 59);
+            textBox4.BorderStyle = BorderStyle.None;
+            textBox4.Font = new Font("Segoe UI Semilight", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            textBox4.ForeColor = Color.White;
+            textBox4.Location = new Point(13, 16);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(100, 16);
+            textBox4.TabIndex = 28;
+            textBox4.Text = "Active";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(30, 41, 59);
+            panel2.Controls.Add(pictureBox1);
+            panel2.Controls.Add(Total);
+            panel2.Controls.Add(textBox1);
+            panel2.Location = new Point(17, 99);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(250, 100);
+            panel2.TabIndex = 25;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(198, 29);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(48, 50);
+            pictureBox1.TabIndex = 30;
+            pictureBox1.TabStop = false;
+            // 
+            // Total
+            // 
+            Total.BackColor = Color.FromArgb(30, 41, 59);
+            Total.BorderStyle = BorderStyle.None;
+            Total.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            Total.ForeColor = Color.White;
+            Total.Location = new Point(13, 29);
+            Total.Name = "Total";
+            Total.Size = new Size(100, 33);
+            Total.TabIndex = 29;
+            Total.Text = "50";
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.FromArgb(30, 41, 59);
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Font = new Font("Segoe UI Semilight", 9F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            textBox1.ForeColor = Color.White;
+            textBox1.Location = new Point(13, 16);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(100, 16);
+            textBox1.TabIndex = 28;
+            textBox1.Text = "Total Detection";
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(2, 132, 199);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 12F);
+            button1.ForeColor = Color.White;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.Location = new Point(724, 23);
+            button1.Name = "button1";
+            button1.Size = new Size(150, 36);
+            button1.TabIndex = 24;
+            button1.Text = "Start Scan";
+            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.FlatStyle = FlatStyle.Flat;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(11, 40);
+            label1.Margin = new Padding(0);
+            label1.Name = "label1";
+            label1.Size = new Size(346, 19);
+            label1.TabIndex = 12;
+            label1.Text = "Monitor and Manage Keylogger in Your System";
+            label1.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.FlatStyle = FlatStyle.Flat;
+            label2.Font = new Font("Segoe UI", 15F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(11, 11);
+            label2.Margin = new Padding(0);
+            label2.Name = "label2";
+            label2.Size = new Size(313, 24);
+            label2.TabIndex = 11;
+            label2.Text = "Keylogger Detection Dashboard";
+            label2.TextAlign = ContentAlignment.TopCenter;
+            label2.Click += label2_Click_1;
             // 
             // Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(731, 450);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Dashboard";
-            this.Text = "Dashboard";
-            this.Load += new System.EventHandler(this.Dashboard_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(15, 23, 42);
+            ClientSize = new Size(900, 520);
+            Controls.Add(panel1);
+            Controls.Add(User_Name);
+            Controls.Add(User_id);
+            Controls.Add(Key_Log);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "Dashboard";
+            Text = "Dashboard";
+            Load += Dashboard_Load;
+            ((System.ComponentModel.ISupportInitialize)Key_Log).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Process_Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Process_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Detection_Time;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Action;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.Label User_id;
+        private System.Windows.Forms.Label User_Name;
+        private System.Windows.Forms.DataGridView Key_Log;
+        private Panel panel1;
+        private Label label2;
+        private Label label1;
+        private Button button1;
+        private Panel panel2;
+        private TextBox Total;
+        private TextBox textBox1;
+        private Panel panel4;
+        private TextBox Suspended;
+        private TextBox textBox6;
+        private Panel panel3;
+        private TextBox Active;
+        private TextBox textBox4;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox3;
+        private DataGridViewTextBoxColumn Process_Id;
+        private DataGridViewTextBoxColumn Process_Name;
+        private DataGridViewTextBoxColumn Process_Path;
+        private DataGridViewTextBoxColumn Detection_Time;
+        private DataGridViewTextBoxColumn Action;
     }
 }

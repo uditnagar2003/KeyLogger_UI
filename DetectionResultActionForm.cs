@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Client_Library;
+using keylogger_lib.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +11,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VisualKeyloggerDetector;
 using VisualKeyloggerDetector.Core;
 
 namespace KLDS
@@ -16,11 +19,39 @@ namespace KLDS
     public partial class DetectionResultActionForm : Form
     {
         private List<DetectionResult> _results;
+        private KeyLogService keyLogService = new KeyLogService();
+        private List<KeyLoggerInfo> _keyLoggerInfos = new List<KeyLoggerInfo>();
+
+
         public DetectionResultActionForm(List<DetectionResult> results)
         {
             _results = results;
             InitializeComponent();
+            createGraphicsColumn();
             InitializeTable();
+            Panel verticalMask = new Panel
+            {
+                Width = SystemInformation.VerticalScrollBarWidth,
+                Height = Detected_Table.Height,
+                Left = Detected_Table.Right - SystemInformation.VerticalScrollBarWidth,
+                Top = Detected_Table.Top,
+                BackColor = Detected_Table.BackgroundColor, // Or match DataGridView background
+                Anchor = AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom
+            };
+            Debug.WriteLine("Execueting table panel" + verticalMask.Width);
+            this.Controls.Add(verticalMask);
+            verticalMask.BringToFront();
+        }
+        private void createGraphicsColumn()
+        {
+            // Icon treeIcon = new Icon(this.GetType(), "tree.ico");
+            DataGridViewImageColumn iconColumn = new DataGridViewImageColumn();
+            //iconColumn.Image = treeIcon.ToBitmap();
+            iconColumn.Name = "tree";
+            iconColumn.HeaderText = "";
+            iconColumn.Width = 20; // Set the width of the icon column
+            iconColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            Detected_Table.Columns.Insert(0, iconColumn);
         }
 
         private void InitializeTable()
@@ -35,7 +66,23 @@ namespace KLDS
                 //  var row = new DataGridViewRow();
                 //    row.CreateCells(result.ProcessId, result.ProcessName, result.ExecutablePath, result.Correlation);
                 if (result.IsDetected)
-                    Detected_Table.Rows.Add(result.ProcessId, result.ProcessName, result.ExecutablePath, result.Correlation, "ignored");
+                    Detected_Table.Rows.Add(result.ProcessId, result.ProcessName, result.ExecutablePath, result.Correlation,DateTime.Now ,"Active");
+            }
+            foreach (var result in _results)
+            {
+                // Log the ignored keylogger information 
+                KeyLoggerInfo info = new KeyLoggerInfo()
+                {
+                    process_id = result.ProcessId,
+                    Process_Name = result.ProcessName,
+                    Location = result.ExecutablePath,
+                    Detection_Time = DateTime.Now,
+                    User_Id = User_Session.UserId,
+                    Action = "Ignored",
+                    Status ="Active"
+                };
+                _keyLoggerInfos.Add(info);
+
             }
         }
 
@@ -58,7 +105,7 @@ namespace KLDS
         private void Detected_Table_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int selectedRowIndex = e.RowIndex;
-            Debug.WriteLine("selectedRowIndex"+selectedRowIndex);
+            Debug.WriteLine("selectedRowIndex" + selectedRowIndex);
             ProcesId.Text = Detected_Table.Rows[selectedRowIndex].Cells[0].Value.ToString();
             ProcessName.Text = Detected_Table.Rows[selectedRowIndex].Cells[1].Value.ToString();
 
@@ -68,13 +115,53 @@ namespace KLDS
         private void Suspend_Button_Click_1(object sender, EventArgs e)
         {
             int selectedRowIndex = Detected_Table.SelectedRows[0].Index;
-            Detected_Table.Rows[selectedRowIndex].Cells[4].Value = "suspended";
+            int id = Convert.ToInt32(Detected_Table.Rows[selectedRowIndex].Cells[0].Value);
+            foreach (var info in _keyLoggerInfos)
+            {
+                var processInfo = ProcessMonitor.GetProcessById(id);
+                if (info.process_id == id)
+                {
+
+                    info.Action = "Suspended";
+                    info.Status = "suspended";
+                    Detected_Table.Rows[selectedRowIndex].Cells[5].Value = "suspended";
+                }
+            }
+
+
         }
 
         private void Ignore_Button_Click(object sender, EventArgs e)
         {
-            int selectedRowIndex = Detected_Table.SelectedRows[0].Index;
-            Detected_Table.Rows[selectedRowIndex].Cells[4].Value = "Ignore";
+            foreach (var res in _keyLoggerInfos)
+
+            {
+                keyLogService.SendKeyLogAsync(res).ContinueWith(task =>
+                {
+                    if (task.IsCompletedSuccessfully)
+                    {
+                        Debug.WriteLine("Keylogger info sent successfully: " + res.Process_Name);
+                    }
+                    else
+                    {
+                        Debug.WriteLine("Failed to send keylogger info: " + res.Process_Name);
+                    }
+                });
+
+            }
+            // Skip the last row if it's a new row (used for inserting new data)
+
+            // Detected_Table.Rows[selectedRowIndex].Cells[4].Value = "Ignore";
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ProcesId_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

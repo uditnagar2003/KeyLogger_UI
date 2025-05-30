@@ -28,232 +28,213 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.Edit_Button = new System.Windows.Forms.Button();
-            this.Save_Button = new System.Windows.Forms.Button();
-            this.Back_Button = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
-            this.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserDetail));
+            label2 = new Label();
+            label1 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            flowLayoutPanel2 = new FlowLayoutPanel();
+            User_id = new TextBox();
+            User_Name = new TextBox();
+            EMail = new TextBox();
+            textBox3 = new TextBox();
+            Back_Button = new Button();
+            flowLayoutPanel1.SuspendLayout();
+            flowLayoutPanel2.SuspendLayout();
+            SuspendLayout();
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
-            this.label2.Location = new System.Drawing.Point(323, 31);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(190, 37);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "User Details";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(391, 50);
+            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(128, 30);
+            label2.TabIndex = 9;
+            label2.Text = "User Details";
+            label2.TextAlign = ContentAlignment.TopCenter;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
-            this.label1.Location = new System.Drawing.Point(11, 46);
-            this.label1.Margin = new System.Windows.Forms.Padding(5);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(3);
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label1.Size = new System.Drawing.Size(137, 31);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "User Name :";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            label1.AutoSize = true;
+            label1.Dock = DockStyle.Left;
+            label1.Font = new Font("Segoe UI Semilight", 14.25F);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(51, 49);
+            label1.Margin = new Padding(6);
+            label1.Name = "label1";
+            label1.Padding = new Padding(4, 3, 4, 3);
+            label1.RightToLeft = RightToLeft.No;
+            label1.Size = new Size(121, 31);
+            label1.TabIndex = 10;
+            label1.Text = "User Name :";
+            label1.TextAlign = ContentAlignment.MiddleLeft;
+            label1.Click += label1_Click;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
-            this.label3.Location = new System.Drawing.Point(57, 87);
-            this.label3.Margin = new System.Windows.Forms.Padding(5);
-            this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(3);
-            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label3.Size = new System.Drawing.Size(91, 31);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "E-Mail :";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semilight", 14.25F);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(91, 92);
+            label3.Margin = new Padding(6);
+            label3.Name = "label3";
+            label3.Padding = new Padding(4, 3, 4, 3);
+            label3.RightToLeft = RightToLeft.No;
+            label3.Size = new Size(81, 31);
+            label3.TabIndex = 11;
+            label3.Text = "E-Mail :";
+            label3.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
-            this.label4.Location = new System.Drawing.Point(50, 5);
-            this.label4.Margin = new System.Windows.Forms.Padding(5);
-            this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(3);
-            this.label4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label4.Size = new System.Drawing.Size(98, 31);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "User Id :";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            label4.AutoSize = true;
+            label4.BackColor = Color.FromArgb(15, 23, 42);
+            label4.Dock = DockStyle.Left;
+            label4.Font = new Font("Segoe UI Semilight", 14.25F);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(85, 6);
+            label4.Margin = new Padding(6);
+            label4.Name = "label4";
+            label4.Padding = new Padding(4, 3, 4, 3);
+            label4.RightToLeft = RightToLeft.No;
+            label4.Size = new Size(87, 31);
+            label4.TabIndex = 12;
+            label4.Text = "User Id :";
+            label4.TextAlign = ContentAlignment.MiddleLeft;
+            label4.Click += label4_Click;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
-            this.label5.Location = new System.Drawing.Point(24, 128);
-            this.label5.Margin = new System.Windows.Forms.Padding(5);
-            this.label5.Name = "label5";
-            this.label5.Padding = new System.Windows.Forms.Padding(3);
-            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label5.Size = new System.Drawing.Size(124, 31);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Password :";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Semilight", 14.25F);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(67, 135);
+            label5.Margin = new Padding(6);
+            label5.Name = "label5";
+            label5.Padding = new Padding(4, 3, 4, 3);
+            label5.RightToLeft = RightToLeft.No;
+            label5.Size = new Size(105, 31);
+            label5.TabIndex = 13;
+            label5.Text = "Password :";
+            label5.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.label4);
-            this.flowLayoutPanel1.Controls.Add(this.label1);
-            this.flowLayoutPanel1.Controls.Add(this.label3);
-            this.flowLayoutPanel1.Controls.Add(this.label5);
-            this.flowLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(179, 99);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(153, 173);
-            this.flowLayoutPanel1.TabIndex = 15;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
+            flowLayoutPanel1.Controls.Add(label4);
+            flowLayoutPanel1.Controls.Add(label1);
+            flowLayoutPanel1.Controls.Add(label3);
+            flowLayoutPanel1.Controls.Add(label5);
+            flowLayoutPanel1.Font = new Font("Microsoft Sans Serif", 72F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            flowLayoutPanel1.Location = new Point(209, 114);
+            flowLayoutPanel1.Margin = new Padding(4, 3, 4, 3);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(178, 200);
+            flowLayoutPanel1.TabIndex = 15;
+            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
             // flowLayoutPanel2
             // 
-            this.flowLayoutPanel2.Controls.Add(this.textBox4);
-            this.flowLayoutPanel2.Controls.Add(this.textBox1);
-            this.flowLayoutPanel2.Controls.Add(this.textBox2);
-            this.flowLayoutPanel2.Controls.Add(this.textBox3);
-            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(335, 99);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(309, 173);
-            this.flowLayoutPanel2.TabIndex = 16;
+            flowLayoutPanel2.Controls.Add(User_id);
+            flowLayoutPanel2.Controls.Add(User_Name);
+            flowLayoutPanel2.Controls.Add(EMail);
+            flowLayoutPanel2.Controls.Add(textBox3);
+            flowLayoutPanel2.FlowDirection = FlowDirection.RightToLeft;
+            flowLayoutPanel2.Font = new Font("Microsoft Sans Serif", 72F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            flowLayoutPanel2.Location = new Point(391, 114);
+            flowLayoutPanel2.Margin = new Padding(4, 3, 4, 3);
+            flowLayoutPanel2.Name = "flowLayoutPanel2";
+            flowLayoutPanel2.RightToLeft = RightToLeft.No;
+            flowLayoutPanel2.Size = new Size(360, 200);
+            flowLayoutPanel2.TabIndex = 16;
             // 
-            // textBox1
+            // User_id
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(3, 49);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(303, 33);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "HEll o world";
+            User_id.Font = new Font("Segoe UI Semilight", 14.25F);
+            User_id.Location = new Point(3, 12);
+            User_id.Margin = new Padding(4, 12, 4, 3);
+            User_id.Multiline = true;
+            User_id.Name = "User_id";
+            User_id.Size = new Size(353, 37);
+            User_id.TabIndex = 3;
             // 
-            // textBox2
+            // User_Name
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(3, 88);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(303, 33);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.Text = "HEll o world";
+            User_Name.Font = new Font("Segoe UI Semilight", 14.25F);
+            User_Name.Location = new Point(3, 55);
+            User_Name.Margin = new Padding(4, 3, 4, 3);
+            User_Name.Multiline = true;
+            User_Name.Name = "User_Name";
+            User_Name.Size = new Size(353, 37);
+            User_Name.TabIndex = 0;
+            // 
+            // EMail
+            // 
+            EMail.Font = new Font("Segoe UI Semilight", 14.25F);
+            EMail.Location = new Point(3, 98);
+            EMail.Margin = new Padding(4, 3, 4, 3);
+            EMail.Multiline = true;
+            EMail.Name = "EMail";
+            EMail.Size = new Size(353, 37);
+            EMail.TabIndex = 1;
             // 
             // textBox3
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(3, 127);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(303, 33);
-            this.textBox3.TabIndex = 2;
-            this.textBox3.Text = "HEll o world";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(3, 10);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(303, 33);
-            this.textBox4.TabIndex = 3;
-            this.textBox4.Text = "HEll o world";
-            // 
-            // Edit_Button
-            // 
-            this.Edit_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
-            this.Edit_Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Edit_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Edit_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Edit_Button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
-            this.Edit_Button.Location = new System.Drawing.Point(287, 278);
-            this.Edit_Button.Name = "Edit_Button";
-            this.Edit_Button.Size = new System.Drawing.Size(124, 39);
-            this.Edit_Button.TabIndex = 17;
-            this.Edit_Button.Text = "Edit";
-            this.Edit_Button.UseVisualStyleBackColor = false;
-            // 
-            // Save_Button
-            // 
-            this.Save_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
-            this.Save_Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Save_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Save_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Save_Button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
-            this.Save_Button.Location = new System.Drawing.Point(417, 278);
-            this.Save_Button.Name = "Save_Button";
-            this.Save_Button.Size = new System.Drawing.Size(124, 39);
-            this.Save_Button.TabIndex = 18;
-            this.Save_Button.Text = "Save";
-            this.Save_Button.UseVisualStyleBackColor = false;
+            textBox3.Font = new Font("Segoe UI Semilight", 14.25F);
+            textBox3.Location = new Point(3, 141);
+            textBox3.Margin = new Padding(4, 3, 4, 3);
+            textBox3.Multiline = true;
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(353, 37);
+            textBox3.TabIndex = 2;
             // 
             // Back_Button
             // 
-            this.Back_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(216)))));
-            this.Back_Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Back_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Back_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Back_Button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
-            this.Back_Button.Location = new System.Drawing.Point(6, 6);
-            this.Back_Button.Name = "Back_Button";
-            this.Back_Button.Size = new System.Drawing.Size(112, 35);
-            this.Back_Button.TabIndex = 19;
-            this.Back_Button.Text = "Go Back";
-            this.Back_Button.UseVisualStyleBackColor = false;
+            Back_Button.BackColor = Color.FromArgb(37, 99, 235);
+            Back_Button.Cursor = Cursors.Hand;
+            Back_Button.FlatAppearance.BorderSize = 0;
+            Back_Button.FlatStyle = FlatStyle.Flat;
+            Back_Button.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            Back_Button.ForeColor = Color.White;
+            Back_Button.Image = (Image)resources.GetObject("Back_Button.Image");
+            Back_Button.ImageAlign = ContentAlignment.MiddleLeft;
+            Back_Button.Location = new Point(7, 7);
+            Back_Button.Margin = new Padding(4, 3, 4, 3);
+            Back_Button.Name = "Back_Button";
+            Back_Button.Size = new Size(131, 40);
+            Back_Button.TabIndex = 19;
+            Back_Button.Text = "Go Back";
+            Back_Button.TextAlign = ContentAlignment.MiddleLeft;
+            Back_Button.TextImageRelation = TextImageRelation.TextBeforeImage;
+            Back_Button.UseVisualStyleBackColor = false;
             // 
             // UserDetail
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(789, 450);
-            this.Controls.Add(this.Back_Button);
-            this.Controls.Add(this.Save_Button);
-            this.Controls.Add(this.Edit_Button);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.flowLayoutPanel2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "UserDetail";
-            this.Padding = new System.Windows.Forms.Padding(3);
-            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Text = "UserDetail";
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel2.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(15, 23, 42);
+            ClientSize = new Size(920, 519);
+            Controls.Add(Back_Button);
+            Controls.Add(flowLayoutPanel1);
+            Controls.Add(label2);
+            Controls.Add(flowLayoutPanel2);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "UserDetail";
+            Padding = new Padding(4, 3, 4, 3);
+            RightToLeft = RightToLeft.Yes;
+            Text = "UserDetail";
+            Load += UserDetail_Load;
+            flowLayoutPanel1.ResumeLayout(false);
+            flowLayoutPanel1.PerformLayout();
+            flowLayoutPanel2.ResumeLayout(false);
+            flowLayoutPanel2.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
@@ -266,12 +247,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox User_id;
+        private System.Windows.Forms.TextBox User_Name;
+        private System.Windows.Forms.TextBox EMail;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button Edit_Button;
-        private System.Windows.Forms.Button Save_Button;
         private System.Windows.Forms.Button Back_Button;
     }
 }

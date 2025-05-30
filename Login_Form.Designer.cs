@@ -28,119 +28,155 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.username = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.User = new System.Windows.Forms.TextBox();
-            this.Password = new System.Windows.Forms.TextBox();
-            this.Login_Button = new System.Windows.Forms.Button();
-            this.NewUser_Button = new System.Windows.Forms.Button();
-            this.ForgotPassword = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            label1 = new Label();
+            username = new Label();
+            label2 = new Label();
+            Login_Button = new Button();
+            NewUser_Button = new Button();
+            Password = new TextBox();
+            User = new TextBox();
+            Login_Status = new Label();
+            label3 = new Label();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(131, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(425, 37);
-            this.label1.TabIndex = 0;
-            this.label1.Text = " Keylogger Detection System";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 20.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(15, 23, 42);
+            label1.Location = new Point(70, 37);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(379, 38);
+            label1.TabIndex = 0;
+            label1.Text = " Keylogger Detection System";
+            label1.Click += label1_Click;
             // 
             // username
             // 
-            this.username.AutoSize = true;
-            this.username.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.username.Location = new System.Drawing.Point(133, 120);
-            this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(119, 25);
-            this.username.TabIndex = 1;
-            this.username.Text = "User Name";
+            username.AutoSize = true;
+            username.Font = new Font("Segoe UI Semilight", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            username.Location = new Point(70, 147);
+            username.Margin = new Padding(4, 0, 4, 0);
+            username.Name = "username";
+            username.Size = new Size(82, 20);
+            username.TabIndex = 1;
+            username.Text = "User Name";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(133, 169);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 25);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Password";
-            // 
-            // User
-            // 
-            this.User.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.User.Location = new System.Drawing.Point(282, 120);
-            this.User.Name = "User";
-            this.User.Size = new System.Drawing.Size(222, 31);
-            this.User.TabIndex = 3;
-            // 
-            // Password
-            // 
-            this.Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Password.Location = new System.Drawing.Point(282, 163);
-            this.Password.Name = "Password";
-            this.Password.Size = new System.Drawing.Size(222, 31);
-            this.Password.TabIndex = 4;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semilight", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(70, 217);
+            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(70, 20);
+            label2.TabIndex = 2;
+            label2.Text = "Password";
             // 
             // Login_Button
             // 
-            this.Login_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Login_Button.Location = new System.Drawing.Point(282, 218);
-            this.Login_Button.Name = "Login_Button";
-            this.Login_Button.Size = new System.Drawing.Size(119, 36);
-            this.Login_Button.TabIndex = 5;
-            this.Login_Button.Text = "Login";
-            this.Login_Button.UseVisualStyleBackColor = true;
+            Login_Button.BackColor = Color.FromArgb(15, 23, 42);
+            Login_Button.FlatAppearance.BorderColor = Color.White;
+            Login_Button.FlatStyle = FlatStyle.Flat;
+            Login_Button.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            Login_Button.ForeColor = Color.White;
+            Login_Button.Location = new Point(70, 296);
+            Login_Button.Margin = new Padding(4, 3, 4, 3);
+            Login_Button.Name = "Login_Button";
+            Login_Button.Size = new Size(353, 42);
+            Login_Button.TabIndex = 5;
+            Login_Button.Text = "Login";
+            Login_Button.UseVisualStyleBackColor = false;
+            Login_Button.Click += Login_Button_Click;
             // 
             // NewUser_Button
             // 
-            this.NewUser_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewUser_Button.Location = new System.Drawing.Point(407, 218);
-            this.NewUser_Button.Name = "NewUser_Button";
-            this.NewUser_Button.Size = new System.Drawing.Size(119, 36);
-            this.NewUser_Button.TabIndex = 6;
-            this.NewUser_Button.Text = "New User";
-            this.NewUser_Button.UseVisualStyleBackColor = true;
+            NewUser_Button.BackColor = Color.White;
+            NewUser_Button.FlatAppearance.BorderColor = Color.FromArgb(15, 23, 42);
+            NewUser_Button.FlatAppearance.BorderSize = 2;
+            NewUser_Button.FlatStyle = FlatStyle.Popup;
+            NewUser_Button.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            NewUser_Button.ForeColor = Color.FromArgb(15, 23, 42);
+            NewUser_Button.Location = new Point(72, 354);
+            NewUser_Button.Margin = new Padding(4, 3, 4, 3);
+            NewUser_Button.Name = "NewUser_Button";
+            NewUser_Button.Size = new Size(352, 36);
+            NewUser_Button.TabIndex = 6;
+            NewUser_Button.Text = "New User";
+            NewUser_Button.UseVisualStyleBackColor = false;
+            NewUser_Button.Click += NewUser_Button_Click;
             // 
-            // ForgotPassword
+            // Password
             // 
-            this.ForgotPassword.AutoSize = true;
-            this.ForgotPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForgotPassword.Location = new System.Drawing.Point(282, 257);
-            this.ForgotPassword.Name = "ForgotPassword";
-            this.ForgotPassword.Size = new System.Drawing.Size(119, 16);
-            this.ForgotPassword.TabIndex = 7;
-            this.ForgotPassword.Text = "Forgot Password ?";
+            Password.BackColor = Color.White;
+            Password.Font = new Font("Segoe UI Semilight", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Password.Location = new Point(71, 240);
+            Password.Multiline = true;
+            Password.Name = "Password";
+            Password.Size = new Size(350, 35);
+            Password.TabIndex = 9;
+            Password.UseSystemPasswordChar = true;
+            Password.TextChanged += Password_TextChanged;
+            // 
+            // User
+            // 
+            User.BackColor = Color.White;
+            User.Font = new Font("Segoe UI Semilight", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            User.Location = new Point(71, 179);
+            User.Margin = new Padding(4, 12, 4, 3);
+            User.Multiline = true;
+            User.Name = "User";
+            User.Size = new Size(350, 35);
+            User.TabIndex = 10;
+            // 
+            // Login_Status
+            // 
+            Login_Status.AutoSize = true;
+            Login_Status.Font = new Font("Arial", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Login_Status.Location = new Point(72, 404);
+            Login_Status.Name = "Login_Status";
+            Login_Status.Size = new Size(0, 22);
+            Login_Status.TabIndex = 11;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 14.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.FromArgb(15, 23, 42);
+            label3.Location = new Point(199, 75);
+            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(107, 28);
+            label3.TabIndex = 12;
+            label3.Text = "User Login";
             // 
             // Login_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(688, 367);
-            this.ControlBox = false;
-            this.Controls.Add(this.ForgotPassword);
-            this.Controls.Add(this.NewUser_Button);
-            this.Controls.Add(this.Login_Button);
-            this.Controls.Add(this.Password);
-            this.Controls.Add(this.User);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.username);
-            this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "Login_Form";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.Text = "Form1";
-            this.TransparencyKey = System.Drawing.Color.White;
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(493, 475);
+            Controls.Add(label3);
+            Controls.Add(Login_Status);
+            Controls.Add(User);
+            Controls.Add(Password);
+            Controls.Add(NewUser_Button);
+            Controls.Add(Login_Button);
+            Controls.Add(label2);
+            Controls.Add(username);
+            Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 3, 4, 3);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "Login_Form";
+            ShowIcon = false;
+            ShowInTaskbar = false;
+            Text = "Form1";
+            Load += Form1_Load;
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
@@ -149,11 +185,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label username;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox User;
-        private System.Windows.Forms.TextBox Password;
         private System.Windows.Forms.Button Login_Button;
         private System.Windows.Forms.Button NewUser_Button;
-        private System.Windows.Forms.Label ForgotPassword;
+        private TextBox Password;
+        private TextBox User;
+        private Label Login_Status;
+        private Label label3;
     }
 }
 

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Client_Library;
+using keylogger_lib.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,12 +24,24 @@ namespace KLDS
         private DashboardForm _dashboardForm;
         private ExperimentController _experimentController;
         private ExperimentConfiguration _currentConfig = null; // Store config
+        private KeyLogService keyLogService = new KeyLogService(); // Assuming you have a service to handle keylog data
 
         public ScanForm(DashboardForm dashboardForm)
         {
             InitializeComponent();
             _dashboardForm = dashboardForm;
             InitializeExperiment(); // Setup controller on startup
+            Percentage.Text = "0%"; // Initialize percentage text
+            Panel verticalMask = new Panel
+            {
+                Width = SystemInformation.VerticalScrollBarWidth,
+                Height = Process_Scanned.Height,
+                Left = Process_Scanned.Right - SystemInformation.VerticalScrollBarWidth,
+                Top = Process_Scanned.Top,
+                BackColor = Process_Scanned.BackgroundColor, // Or match DataGridView background
+                Anchor = AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom
+            };
+            this.Controls.Add(verticalMask);
         }
 
         private void InitializeExperiment()
@@ -79,28 +93,29 @@ namespace KLDS
         private void ExperimentCOntroller_ProcessWriteInfo(object? sender, ProcessWriteInfoData e)
         {
             //Debug.WriteLine($" Process Id :{e.Id} \n Process Name:{e.Name}\n Process Count:{e.WriteCount}");
-          Process_Scanned.Rows.Add(e.Id, e.Name, e.WriteCount,0);
+          Process_Scanned.Rows.Add(e.Id, e.Name,e.ExecutablePath, e.WriteCount);
            Process_Scanned.FirstDisplayedScrollingRowIndex = Process_Scanned.Rows.Count - 1;
         }
 
         private void UpdateProgressBar(int value, int maximum)
         {
             // ToolStripItems don't have InvokeRequired, check the parent StatusStrip
-            if (statusStrip1.InvokeRequired)
-            {
-                statusStrip1.BeginInvoke(new Action(() =>
-                {
+           // if (statusStrip1.InvokeRequired)
+          //  {
+              //  statusStrip1.BeginInvoke(new Action(() =>
+              //  {
                     progressBar1.Maximum = Math.Max(1, maximum); // Ensure maximum is at least 1
                     progressBar1.Value = Math.Max(0, Math.Min(value, progressBar1.Maximum)); // Clamp value
+                    Percentage.Text = $"{(progressBar1.Value/progressBar1.Maximum)*100}%"; // Update percentage text
                     progressBar1.Visible = (maximum > 0 && value < maximum); // Show only when running and max is valid
-                }));
-            }
+               // }));
+         /*   }
             else
             {
                 progressBar1.Maximum = Math.Max(1, maximum);
                 progressBar1.Value = Math.Max(0, Math.Min(value, progressBar1.Maximum));
                 progressBar1.Visible = (maximum > 0 && value < maximum);
-            }
+            }*/
         }
 
         private void SetButtonsEnabled(bool startEnabled, bool stopEnabled)
@@ -122,15 +137,16 @@ namespace KLDS
 
         private void UpdateStatus(string message)
         {
-            if (statusStrip1.InvokeRequired)
-            {
-                // Use BeginInvoke for potentially better responsiveness if status updates are frequent
-                statusStrip1.BeginInvoke(new Action(() => Task_Label.Text = message));
-            }
-            else
-            {
-                Task_Label.Text = message;
-            }
+            Task_Label.Text = message; // Update status label directly
+            /* if (statusStrip1.InvokeRequired)
+             {
+                 // Use BeginInvoke for potentially better responsiveness if status updates are frequent
+                 statusStrip1.BeginInvoke(new Action(() => Task_Label.Text = message));
+             }
+             else
+             {
+                 Task_Label.Text = message;
+             }*/
         }
         //notification system event handler
         private void ExperimentController_KeyloggerDetected(object? sender, DetectionResult result)
@@ -178,6 +194,7 @@ namespace KLDS
 
         private void DetectionResultActionForm(List<DetectionResult> results)
         {
+           
           _dashboardForm.loadform(new DetectionResultActionForm(results)); // Show results in a modal dialog
         }
 

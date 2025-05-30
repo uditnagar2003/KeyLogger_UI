@@ -37,7 +37,7 @@ namespace KLDS
 
         private void Dashboard_Button_Click(object sender, EventArgs e)
         {
-            loadform(new Dashboard());
+            loadform(new Dashboard(this));
         }
 
         private void Scan_Button_Click(object sender, EventArgs e)
@@ -55,6 +55,14 @@ namespace KLDS
             //loadform(new DetectionResultActionForm());
         }
 
-       
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mainpanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
