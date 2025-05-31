@@ -73,7 +73,7 @@ namespace KLDS
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(25, 7);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(46, 85);
+            pictureBox1.Size = new Size(46, 52);
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
             // 
@@ -193,19 +193,19 @@ namespace KLDS
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 17F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold | FontStyle.Italic);
             label1.ForeColor = Color.White;
             label1.Location = new Point(78, 20);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(60, 26);
+            label1.Size = new Size(62, 28);
             label1.TabIndex = 0;
             label1.Text = "KDS";
             label1.Click += label1_Click;
             // 
             // Top_pannel
             // 
-            Top_pannel.BackColor = Color.FromArgb(15, 23, 42);
+            Top_pannel.BackColor = Color.FromArgb(30, 41, 59);
             Top_pannel.Controls.Add(label2);
             Top_pannel.Controls.Add(Exit_Button);
             Top_pannel.Dock = DockStyle.Top;
@@ -219,13 +219,13 @@ namespace KLDS
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = Color.FromArgb(15, 23, 42);
-            label2.Font = new Font("Segoe UI", 15F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label2.BackColor = Color.FromArgb(30, 41, 59);
+            label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold | FontStyle.Italic);
             label2.ForeColor = Color.White;
             label2.Location = new Point(0, 8);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(279, 24);
+            label2.Size = new Size(332, 28);
             label2.TabIndex = 8;
             label2.Text = "Keylogger Detection System";
             // 

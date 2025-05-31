@@ -238,7 +238,9 @@ namespace KLDS
 
         private async void Start_Button_Click(object sender, EventArgs e)
         {
-            SetButtonsEnabled(false, true); // Disable Start, Enable Stop
+            if (DialogResult.Yes == MessageBox.Show("Are you sure you want to start scanning?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            { 
+                SetButtonsEnabled(false, true); // Disable Start, Enable Stop
             UpdateProgressBar(0, 1); // Reset progress bar state
             progressBar1.Visible = true;
             UpdateStatus("Starting experiment...");
@@ -264,14 +266,24 @@ namespace KLDS
                     progressBar1.Visible = false;
                 }
             }
+            }
+            else
+            {
+                MessageBox.Show("Scanning cancelled.", "Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void Stop_Button_Click(object sender, EventArgs e)
         {
-            _experimentController?.StopExperiment();
-            // UI updates (status, buttons) will be handled by the cancellation/completion events from the controller.
-            UpdateStatus("Stop requested..."); // Give immediate feedback
-            Stop_Button.Enabled = false; // Disable stop button immediately after clicking
+            if (DialogResult.Yes == MessageBox.Show("Are you sure you want to stop the scanning process?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            {
+                _experimentController?.StopExperiment();
+                // UI updates (status, buttons) will be handled by the cancellation/completion events from the controller.
+                UpdateStatus("Stop requested..."); // Give immediate feedback
+                Stop_Button.Enabled = false; // Disable stop button immediately after clicking
+                MessageBox.Show(this, "Scanning process has been stopped.", "Stopped", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
         }
 
         private void label2_Click(object sender, EventArgs e)

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             label3 = new Label();
-            label2 = new Label();
             Algorithm = new ComboBox();
             label1 = new Label();
             label5 = new Label();
@@ -40,6 +39,8 @@
             Key_Min = new TextBox();
             Save_Button = new Button();
             label4 = new Label();
+            label7 = new Label();
+            label8 = new Label();
             SuspendLayout();
             // 
             // label3
@@ -57,19 +58,6 @@
             label3.Text = "Number of interval";
             label3.TextAlign = ContentAlignment.MiddleLeft;
             label3.Click += label3_Click;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(414, 46);
-            label2.Margin = new Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(145, 32);
-            label2.TabIndex = 16;
-            label2.Text = "Intialization";
-            label2.TextAlign = ContentAlignment.TopCenter;
             // 
             // Algorithm
             // 
@@ -196,12 +184,42 @@
             label4.Text = "Pattern Generation Algorithm";
             label4.TextAlign = ContentAlignment.MiddleLeft;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.FlatStyle = FlatStyle.Flat;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(9, 38);
+            label7.Margin = new Padding(0);
+            label7.Name = "label7";
+            label7.Size = new Size(366, 19);
+            label7.TabIndex = 29;
+            label7.Text = "Set various parameter for keylogger detection core";
+            label7.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.FlatStyle = FlatStyle.Flat;
+            label8.Font = new Font("Segoe UI", 15F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.White;
+            label8.Location = new Point(9, 9);
+            label8.Margin = new Padding(0);
+            label8.Name = "label8";
+            label8.Size = new Size(252, 24);
+            label8.TabIndex = 28;
+            label8.Text = "Configure Detection Core";
+            label8.TextAlign = ContentAlignment.TopCenter;
+            // 
             // Detection_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 23, 42);
             ClientSize = new Size(933, 519);
+            Controls.Add(label7);
+            Controls.Add(label8);
             Controls.Add(Save_Button);
             Controls.Add(Key_Min);
             Controls.Add(Key_Max);
@@ -213,7 +231,6 @@
             Controls.Add(Algorithm);
             Controls.Add(label3);
             Controls.Add(label4);
-            Controls.Add(label2);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 3, 4, 3);
             Name = "Detection_Form";
@@ -227,7 +244,6 @@
         #endregion
 
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox Algorithm;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
@@ -238,5 +254,7 @@
         private System.Windows.Forms.TextBox Key_Min;
         private System.Windows.Forms.Button Save_Button;
         private System.Windows.Forms.Label label4;
+        private Label label7;
+        private Label label8;
     }
 }

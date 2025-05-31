@@ -62,13 +62,18 @@ namespace KLDS
              ExperimentConfiguration _config = JsonSerializer.Deserialize<ExperimentConfiguration>(setting, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
            */
             System.Drawing.Image image = System.Drawing.Image.FromFile("E:\\final project\\KLDS_UI\\virus (1).png");
-
+            int i= 0;
             foreach (var result in _results)
             {
                 //  var row = new DataGridViewRow();
                 //    row.CreateCells(result.ProcessId, result.ProcessName, result.ExecutablePath, result.Correlation);
                 if (result.IsDetected)
+                {
                     Detected_Table.Rows.Add(image, result.ProcessId, result.ProcessName, result.ExecutablePath, result.Correlation, DateTime.Now, "Active");
+                    setcolor(i, "Active");
+                    i++;
+                }
+
             }
             foreach (var result in _results)
             {
@@ -98,6 +103,18 @@ namespace KLDS
         {
 
         }
+        private void setcolor(int i, string status)
+        {
+            if (status == "Suspended")
+            {
+                Detected_Table.Rows[i].Cells[6].Style.ForeColor = Color.Green;
+            }
+            else
+            {
+                Detected_Table.Rows[i].Cells[6].Style.ForeColor = Color.Red;
+            }
+
+        }
 
         private void DetectionResultActionForm_Load(object sender, EventArgs e)
         {
@@ -110,7 +127,7 @@ namespace KLDS
             Debug.WriteLine("selectedRowInde detected tablex" + selectedRowIndex);
             ProcesId.Text = Detected_Table.Rows[selectedRowIndex].Cells[1].Value.ToString();
             ProcessName.Text = Detected_Table.Rows[selectedRowIndex].Cells[2].Value.ToString();
-
+            
 
         }
 
@@ -127,6 +144,9 @@ namespace KLDS
                     info.Action = "Suspended";
                     info.Status = "Suspended";
                     Detected_Table.Rows[selectedRowIndex].Cells[6].Value = "Suspended";
+                    setcolor(selectedRowIndex,"Suspended");
+
+
                 }
             }
 
@@ -135,23 +155,32 @@ namespace KLDS
 
         private void Ignore_Button_Click(object sender, EventArgs e)
         {
-            foreach (var res in _keyLoggerInfos)
-
+            if (DialogResult.Yes == MessageBox.Show("Are you sure you want to save the results?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
             {
-                keyLogService.SendKeyLogAsync(res).ContinueWith(task =>
-                {
-                    if (task.IsCompletedSuccessfully)
-                    {
-                        Debug.WriteLine("Keylogger info sent successfully: " + res.Process_Name);
-                    }
-                    else
-                    {
-                        Debug.WriteLine("Failed to send keylogger info: " + res.Process_Name);
-                    }
-                });
 
+                foreach (var res in _keyLoggerInfos)
+
+                {
+                    keyLogService.SendKeyLogAsync(res).ContinueWith(task =>
+                    {
+                        if (task.IsCompletedSuccessfully)
+                        {
+                            Debug.WriteLine("Keylogger info sent successfully: " + res.Process_Name);
+                        }
+                        else
+                        {
+                            Debug.WriteLine("Failed to send keylogger info: " + res.Process_Name);
+                        }
+                    });
+
+                }
+                MessageBox.Show("Detected Keylogger information sent successfully!");
+                MessageBox.Show("Settings saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            MessageBox.Show("Detected Keylogger information sent successfully!");
+            else
+            {
+                MessageBox.Show("REsults not saved.", "Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             // Skip the last row if it's a new row (used for inserting new data)
 
             // Detected_Table.Rows[selectedRowIndex].Cells[4].Value = "Ignore";

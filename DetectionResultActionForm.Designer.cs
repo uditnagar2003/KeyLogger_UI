@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetectionResultActionForm));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             label2 = new Label();
             ProcessName = new TextBox();
             ProcesId = new TextBox();
@@ -71,7 +71,6 @@
             ProcessName.Name = "ProcessName";
             ProcessName.Size = new Size(116, 29);
             ProcessName.TabIndex = 28;
-            ProcessName.Text = "ju";
             ProcessName.TextChanged += textBox2_TextChanged;
             // 
             // ProcesId
@@ -82,7 +81,6 @@
             ProcesId.Name = "ProcesId";
             ProcesId.Size = new Size(116, 29);
             ProcesId.TabIndex = 27;
-            ProcesId.Text = "12";
             ProcesId.TextChanged += ProcesId_TextChanged;
             // 
             // label1
@@ -160,25 +158,25 @@
             Detected_Table.BorderStyle = BorderStyle.None;
             Detected_Table.CellBorderStyle = DataGridViewCellBorderStyle.SunkenHorizontal;
             Detected_Table.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(15, 23, 42);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(15, 23, 42);
-            dataGridViewCellStyle1.SelectionForeColor = Color.White;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            Detected_Table.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(15, 23, 42);
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle4.ForeColor = Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(15, 23, 42);
+            dataGridViewCellStyle4.SelectionForeColor = Color.White;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            Detected_Table.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             Detected_Table.ColumnHeadersHeight = 50;
             Detected_Table.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             Detected_Table.Columns.AddRange(new DataGridViewColumn[] { Process_Id, Process_Name, Process_Path, PCC, Detection_Time, Status });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI Semilight", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(15, 23, 42);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(15, 23, 42);
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            Detected_Table.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = SystemColors.Window;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI Semilight", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = Color.FromArgb(15, 23, 42);
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(15, 23, 42);
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            Detected_Table.DefaultCellStyle = dataGridViewCellStyle5;
             Detected_Table.EnableHeadersVisualStyles = false;
             Detected_Table.GridColor = Color.FromArgb(15, 23, 42);
             Detected_Table.Location = new Point(13, 78);
@@ -188,13 +186,13 @@
             Detected_Table.ReadOnly = true;
             Detected_Table.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             Detected_Table.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(15, 23, 42);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI Semilight", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(30, 41, 59);
-            dataGridViewCellStyle3.SelectionForeColor = Color.White;
-            Detected_Table.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(15, 23, 42);
+            dataGridViewCellStyle6.Font = new Font("Segoe UI Semilight", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(30, 41, 59);
+            dataGridViewCellStyle6.SelectionForeColor = Color.White;
+            Detected_Table.RowsDefaultCellStyle = dataGridViewCellStyle6;
             Detected_Table.RowTemplate.Height = 50;
             Detected_Table.RowTemplate.ReadOnly = true;
             Detected_Table.ScrollBars = ScrollBars.Vertical;
@@ -244,13 +242,14 @@
             Status.Name = "Status";
             Status.ReadOnly = true;
             Status.Width = 116;
+            Status.CellTemplate.Style.Font = new Font("Segoe UI Semilight", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             // 
             // DetectionResultActionForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 23, 42);
-            ClientSize = new Size(900, 520);
+            ClientSize = new Size(900, 537);
             Controls.Add(Detected_Table);
             Controls.Add(Suspend_Button);
             Controls.Add(Ignore_Button);

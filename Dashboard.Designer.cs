@@ -1,4 +1,8 @@
-﻿namespace KLDS
+﻿using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Button = System.Windows.Forms.Button;
+using TextBox = System.Windows.Forms.TextBox;
+
+namespace KLDS
 {
     partial class Dashboard
     {
@@ -35,6 +39,11 @@
             User_id = new Label();
             User_Name = new Label();
             Key_Log = new DataGridView();
+            Process_Id = new DataGridViewTextBoxColumn();
+            Process_Name = new DataGridViewTextBoxColumn();
+            Process_Path = new DataGridViewTextBoxColumn();
+            Detection_Time = new DataGridViewTextBoxColumn();
+            Action = new DataGridViewTextBoxColumn();
             panel1 = new Panel();
             panel4 = new Panel();
             pictureBox3 = new PictureBox();
@@ -51,11 +60,6 @@
             button1 = new Button();
             label1 = new Label();
             label2 = new Label();
-            Process_Id = new DataGridViewTextBoxColumn();
-            Process_Name = new DataGridViewTextBoxColumn();
-            Process_Path = new DataGridViewTextBoxColumn();
-            Detection_Time = new DataGridViewTextBoxColumn();
-            Action = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)Key_Log).BeginInit();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
@@ -109,7 +113,7 @@
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(15, 23, 42);
-            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = Color.Empty;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             Key_Log.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             Key_Log.ColumnHeadersHeight = 50;
@@ -120,7 +124,7 @@
             dataGridViewCellStyle2.Font = new Font("Segoe UI Semilight", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle2.ForeColor = Color.FromArgb(15, 23, 42);
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(15, 23, 42);
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.SelectionForeColor = Color.Empty;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             Key_Log.DefaultCellStyle = dataGridViewCellStyle2;
             Key_Log.EnableHeadersVisualStyles = false;
@@ -136,8 +140,8 @@
             dataGridViewCellStyle3.BackColor = Color.FromArgb(15, 23, 42);
             dataGridViewCellStyle3.Font = new Font("Segoe UI Semilight", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(30, 41, 59);
-            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(15, 23, 42);
+            dataGridViewCellStyle3.SelectionForeColor = Color.Empty;
             Key_Log.RowsDefaultCellStyle = dataGridViewCellStyle3;
             Key_Log.RowTemplate.Height = 50;
             Key_Log.RowTemplate.ReadOnly = true;
@@ -145,6 +149,43 @@
             Key_Log.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             Key_Log.Size = new Size(883, 279);
             Key_Log.TabIndex = 22;
+            // 
+            // Process_Id
+            // 
+            Process_Id.HeaderText = "Process Id";
+            Process_Id.Name = "Process_Id";
+            Process_Id.ReadOnly = true;
+            Process_Id.Width = 108;
+            // 
+            // Process_Name
+            // 
+            Process_Name.HeaderText = "Process Name";
+            Process_Name.Name = "Process_Name";
+            Process_Name.ReadOnly = true;
+            Process_Name.Width = 158;
+            // 
+            // Process_Path
+            // 
+            Process_Path.HeaderText = "Process Path";
+            Process_Path.Name = "Process_Path";
+            Process_Path.ReadOnly = true;
+            Process_Path.Width = 309;
+            // 
+            // Detection_Time
+            // 
+            Detection_Time.HeaderText = "Detection Time";
+            Detection_Time.Name = "Detection_Time";
+            Detection_Time.ReadOnly = true;
+            Detection_Time.Width = 128;
+            // 
+            // Action
+            // 
+            Action.HeaderText = "Status";
+            Action.Name = "Action";
+            Action.ReadOnly = true;
+            Action.Width = 128;
+            Action.CellTemplate.Style.Font = new Font("Segoe UI Semilight", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+
             // 
             // panel1
             // 
@@ -214,7 +255,7 @@
             panel3.Controls.Add(pictureBox2);
             panel3.Controls.Add(Active);
             panel3.Controls.Add(textBox4);
-            panel3.Location = new Point(333, 99);
+            panel3.Location = new Point(319, 99);
             panel3.Name = "panel3";
             panel3.Size = new Size(250, 100);
             panel3.TabIndex = 30;
@@ -343,42 +384,6 @@
             label2.Text = "Keylogger Detection Dashboard";
             label2.TextAlign = ContentAlignment.TopCenter;
             label2.Click += label2_Click_1;
-            // 
-            // Process_Id
-            // 
-            Process_Id.HeaderText = "Process Id";
-            Process_Id.Name = "Process_Id";
-            Process_Id.ReadOnly = true;
-            Process_Id.Width = 108;
-            // 
-            // Process_Name
-            // 
-            Process_Name.HeaderText = "Process Name";
-            Process_Name.Name = "Process_Name";
-            Process_Name.ReadOnly = true;
-            Process_Name.Width = 158;
-            // 
-            // Process_Path
-            // 
-            Process_Path.HeaderText = "Process Path";
-            Process_Path.Name = "Process_Path";
-            Process_Path.ReadOnly = true;
-            Process_Path.Width = 309;
-            // 
-            // Detection_Time
-            // 
-            Detection_Time.HeaderText = "Detection Time";
-            Detection_Time.Name = "Detection_Time";
-            Detection_Time.ReadOnly = true;
-            Detection_Time.Width = 128;
-            // 
-            // Action
-            // 
-            Action.HeaderText = "Status";
-            Action.Name = "Action";
-            Action.ReadOnly = true;
-            Action.Width = 128;
-            Action.CellTemplate.Style.Font = new Font("Segoe UI Semilight", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             // 
             // Dashboard
             // 
