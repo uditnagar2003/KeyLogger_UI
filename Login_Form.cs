@@ -28,10 +28,6 @@ namespace KLDS
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private async void Login_Button_Click(object sender, EventArgs e)
         {
@@ -42,14 +38,7 @@ namespace KLDS
             Login_Status.Text = loggedIn ? "Login successful!" : "Login failed. Check credentials.";
             if (loggedIn)
             {
-                var _jwtToken = User_Session.AccessToken;
-                var handler = new JwtSecurityTokenHandler();
-                var token = handler.ReadJwtToken(_jwtToken);
 
-
-                User_Session.UserId = Int32.Parse(token.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value);
-                User_Session.Email = token.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
-                User_Session.Name = token.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value;
 
                 DashboardForm f = new DashboardForm();
                 f.loadform(new Dashboard(f));
@@ -67,11 +56,15 @@ namespace KLDS
 
             }
         }
-
-        private void ForgotPassword_Click(object sender, EventArgs e)
+        private void Password_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true; // Prevent the beep sound on Enter key press
+                Login_Button.PerformClick(); // Trigger the login button click event
+            }
         }
+
 
         private void NewUser_Button_Click(object sender, EventArgs e)
         {
@@ -80,9 +73,9 @@ namespace KLDS
 
         }
 
-        private void Password_TextChanged(object sender, EventArgs e)
+        private void Exit_Button_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

@@ -61,12 +61,14 @@ namespace KLDS
              String setting = File.ReadAllText(Setting_file_Path);
              ExperimentConfiguration _config = JsonSerializer.Deserialize<ExperimentConfiguration>(setting, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
            */
+            System.Drawing.Image image = System.Drawing.Image.FromFile("E:\\final project\\KLDS_UI\\virus (1).png");
+
             foreach (var result in _results)
             {
                 //  var row = new DataGridViewRow();
                 //    row.CreateCells(result.ProcessId, result.ProcessName, result.ExecutablePath, result.Correlation);
                 if (result.IsDetected)
-                    Detected_Table.Rows.Add(result.ProcessId, result.ProcessName, result.ExecutablePath, result.Correlation,DateTime.Now ,"Active");
+                    Detected_Table.Rows.Add(image, result.ProcessId, result.ProcessName, result.ExecutablePath, result.Correlation, DateTime.Now, "Active");
             }
             foreach (var result in _results)
             {
@@ -79,7 +81,7 @@ namespace KLDS
                     Detection_Time = DateTime.Now,
                     User_Id = User_Session.UserId,
                     Action = "Ignored",
-                    Status ="Active"
+                    Status = "Active"
                 };
                 _keyLoggerInfos.Add(info);
 
@@ -105,9 +107,9 @@ namespace KLDS
         private void Detected_Table_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int selectedRowIndex = e.RowIndex;
-            Debug.WriteLine("selectedRowIndex" + selectedRowIndex);
-            ProcesId.Text = Detected_Table.Rows[selectedRowIndex].Cells[0].Value.ToString();
-            ProcessName.Text = Detected_Table.Rows[selectedRowIndex].Cells[1].Value.ToString();
+            Debug.WriteLine("selectedRowInde detected tablex" + selectedRowIndex);
+            ProcesId.Text = Detected_Table.Rows[selectedRowIndex].Cells[1].Value.ToString();
+            ProcessName.Text = Detected_Table.Rows[selectedRowIndex].Cells[2].Value.ToString();
 
 
         }
@@ -115,7 +117,7 @@ namespace KLDS
         private void Suspend_Button_Click_1(object sender, EventArgs e)
         {
             int selectedRowIndex = Detected_Table.SelectedRows[0].Index;
-            int id = Convert.ToInt32(Detected_Table.Rows[selectedRowIndex].Cells[0].Value);
+            int id = Convert.ToInt32(Detected_Table.Rows[selectedRowIndex].Cells[1].Value);
             foreach (var info in _keyLoggerInfos)
             {
                 var processInfo = ProcessMonitor.GetProcessById(id);
@@ -123,8 +125,8 @@ namespace KLDS
                 {
 
                     info.Action = "Suspended";
-                    info.Status = "suspended";
-                    Detected_Table.Rows[selectedRowIndex].Cells[5].Value = "suspended";
+                    info.Status = "Suspended";
+                    Detected_Table.Rows[selectedRowIndex].Cells[6].Value = "Suspended";
                 }
             }
 
@@ -149,6 +151,7 @@ namespace KLDS
                 });
 
             }
+            MessageBox.Show("Detected Keylogger information sent successfully!");
             // Skip the last row if it's a new row (used for inserting new data)
 
             // Detected_Table.Rows[selectedRowIndex].Cells[4].Value = "Ignore";
@@ -163,5 +166,7 @@ namespace KLDS
         {
 
         }
+
+        
     }
 }

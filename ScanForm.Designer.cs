@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScanForm));
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             Stop_Button = new Button();
             Start_Button = new Button();
             Percentage = new Label();
             panel2 = new Panel();
-            Process_Scanned = new DataGridView();
-            Procees_Id = new DataGridViewTextBoxColumn();
-            Process_Name = new DataGridViewTextBoxColumn();
-            Process_Path = new DataGridViewTextBoxColumn();
-            Bytes_Written = new DataGridViewTextBoxColumn();
             label2 = new Label();
             progressBar1 = new ProgressBar();
             Task_Label = new Label();
             label1 = new Label();
             label3 = new Label();
+            Process_Scanned = new DataGridView();
+            Procees_Id = new DataGridViewTextBoxColumn();
+            Process_Name = new DataGridViewTextBoxColumn();
+            Process_Path = new DataGridViewTextBoxColumn();
+            Bytes_Written = new DataGridViewTextBoxColumn();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Process_Scanned).BeginInit();
             SuspendLayout();
@@ -110,100 +110,20 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(Process_Scanned);
+            panel2.BackColor = Color.FromArgb(30, 41, 59);
             panel2.Controls.Add(label2);
-            panel2.Location = new Point(13, 153);
+            panel2.Location = new Point(0, 152);
             panel2.Margin = new Padding(4, 3, 4, 3);
             panel2.Name = "panel2";
-            panel2.Size = new Size(886, 368);
+            panel2.Size = new Size(900, 72);
             panel2.TabIndex = 34;
-            // 
-            // Process_Scanned
-            // 
-            Process_Scanned.AllowUserToAddRows = false;
-            Process_Scanned.AllowUserToOrderColumns = true;
-            Process_Scanned.AllowUserToResizeColumns = false;
-            Process_Scanned.AllowUserToResizeRows = false;
-            Process_Scanned.BackgroundColor = Color.FromArgb(15, 23, 42);
-            Process_Scanned.BorderStyle = BorderStyle.None;
-            Process_Scanned.CellBorderStyle = DataGridViewCellBorderStyle.SunkenHorizontal;
-            Process_Scanned.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(15, 23, 42);
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 10F);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(15, 23, 42);
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            Process_Scanned.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            Process_Scanned.ColumnHeadersHeight = 50;
-            Process_Scanned.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            Process_Scanned.Columns.AddRange(new DataGridViewColumn[] { Procees_Id, Process_Name, Process_Path, Bytes_Written });
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = SystemColors.Window;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI Semilight", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.FromArgb(15, 23, 42);
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(15, 23, 42);
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            Process_Scanned.DefaultCellStyle = dataGridViewCellStyle5;
-            Process_Scanned.EnableHeadersVisualStyles = false;
-            Process_Scanned.GridColor = Color.FromArgb(15, 23, 42);
-            Process_Scanned.Location = new Point(0, 71);
-            Process_Scanned.Margin = new Padding(4, 3, 4, 3);
-            Process_Scanned.MultiSelect = false;
-            Process_Scanned.Name = "Process_Scanned";
-            Process_Scanned.ReadOnly = true;
-            Process_Scanned.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            Process_Scanned.RowHeadersVisible = false;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(15, 23, 42);
-            dataGridViewCellStyle6.Font = new Font("Segoe UI Semilight", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(30, 41, 59);
-            dataGridViewCellStyle6.SelectionForeColor = Color.White;
-            Process_Scanned.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            Process_Scanned.RowTemplate.Height = 50;
-            Process_Scanned.RowTemplate.ReadOnly = true;
-            Process_Scanned.ScrollBars = ScrollBars.Vertical;
-            Process_Scanned.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            Process_Scanned.Size = new Size(883, 294);
-            Process_Scanned.TabIndex = 39;
-            // 
-            // Procees_Id
-            // 
-            Procees_Id.HeaderText = "Process Id";
-            Procees_Id.Name = "Procees_Id";
-            Procees_Id.ReadOnly = true;
-            Procees_Id.Width = 173;
-            // 
-            // Process_Name
-            // 
-            Process_Name.HeaderText = "Process Name";
-            Process_Name.Name = "Process_Name";
-            Process_Name.ReadOnly = true;
-            Process_Name.Width = 173;
-            // 
-            // Process_Path
-            // 
-            Process_Path.HeaderText = "Process Path";
-            Process_Path.Name = "Process_Path";
-            Process_Path.ReadOnly = true;
-            Process_Path.Width = 336;
-            // 
-            // Bytes_Written
-            // 
-            Bytes_Written.HeaderText = "BytesWritten";
-            Bytes_Written.Name = "Bytes_Written";
-            Bytes_Written.ReadOnly = true;
-            Bytes_Written.Width = 173;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semilight", 15.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(6, 6);
+            label2.Location = new Point(6, 17);
             label2.Margin = new Padding(6);
             label2.Name = "label2";
             label2.Padding = new Padding(4, 3, 4, 3);
@@ -212,6 +132,7 @@
             label2.TabIndex = 36;
             label2.Text = "Process Being Processed";
             label2.TextAlign = ContentAlignment.MiddleLeft;
+            label2.Click += label2_Click;
             // 
             // progressBar1
             // 
@@ -258,12 +179,93 @@
             label3.TabIndex = 42;
             label3.Text = "Scan Progress";
             // 
+            // Process_Scanned
+            // 
+            Process_Scanned.AllowUserToAddRows = false;
+            Process_Scanned.AllowUserToOrderColumns = true;
+            Process_Scanned.AllowUserToResizeColumns = false;
+            Process_Scanned.AllowUserToResizeRows = false;
+            Process_Scanned.BackgroundColor = Color.FromArgb(15, 23, 42);
+            Process_Scanned.BorderStyle = BorderStyle.None;
+            Process_Scanned.CellBorderStyle = DataGridViewCellBorderStyle.SunkenHorizontal;
+            Process_Scanned.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(15, 23, 42);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(15, 23, 42);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            Process_Scanned.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            Process_Scanned.ColumnHeadersHeight = 50;
+            Process_Scanned.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            Process_Scanned.Columns.AddRange(new DataGridViewColumn[] { Procees_Id, Process_Name, Process_Path, Bytes_Written });
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Semilight", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(15, 23, 42);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(15, 23, 42);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            Process_Scanned.DefaultCellStyle = dataGridViewCellStyle2;
+            Process_Scanned.EnableHeadersVisualStyles = false;
+            Process_Scanned.GridColor = Color.FromArgb(15, 23, 42);
+            Process_Scanned.Location = new Point(17, 227);
+            Process_Scanned.Margin = new Padding(17, 0, 0, 0);
+            Process_Scanned.MultiSelect = false;
+            Process_Scanned.Name = "Process_Scanned";
+            Process_Scanned.ReadOnly = true;
+            Process_Scanned.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            Process_Scanned.RowHeadersVisible = false;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(15, 23, 42);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI Semilight", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(30, 41, 59);
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            Process_Scanned.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            Process_Scanned.RowTemplate.Height = 50;
+            Process_Scanned.RowTemplate.ReadOnly = true;
+            Process_Scanned.ScrollBars = ScrollBars.Vertical;
+            Process_Scanned.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            Process_Scanned.Size = new Size(883, 294);
+            Process_Scanned.TabIndex = 43;
+            // 
+            // Procees_Id
+            // 
+            Procees_Id.HeaderText = "Process Id";
+            Procees_Id.Name = "Procees_Id";
+            Procees_Id.ReadOnly = true;
+            Procees_Id.Width = 183;
+            // 
+            // Process_Name
+            // 
+            Process_Name.HeaderText = "Process Name";
+            Process_Name.Name = "Process_Name";
+            Process_Name.ReadOnly = true;
+            Process_Name.Width = 183;
+            // 
+            // Process_Path
+            // 
+            Process_Path.HeaderText = "Process Path";
+            Process_Path.Name = "Process_Path";
+            Process_Path.ReadOnly = true;
+            Process_Path.Width = 334;
+            // 
+            // Bytes_Written
+            // 
+            Bytes_Written.HeaderText = "BytesWritten";
+            Bytes_Written.Name = "Bytes_Written";
+            Bytes_Written.ReadOnly = true;
+            Bytes_Written.Width = 183;
+            // 
             // ScanForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 23, 42);
             ClientSize = new Size(900, 520);
+            Controls.Add(Process_Scanned);
             Controls.Add(label3);
             Controls.Add(label1);
             Controls.Add(Task_Label);
@@ -292,14 +294,14 @@
         private System.Windows.Forms.Label Percentage;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
+        private ProgressBar progressBar1;
+        private Label Task_Label;
+        private Label label1;
+        private Label label3;
         private DataGridView Process_Scanned;
         private DataGridViewTextBoxColumn Procees_Id;
         private DataGridViewTextBoxColumn Process_Name;
         private DataGridViewTextBoxColumn Process_Path;
         private DataGridViewTextBoxColumn Bytes_Written;
-        private ProgressBar progressBar1;
-        private Label Task_Label;
-        private Label label1;
-        private Label label3;
     }
 }

@@ -71,6 +71,7 @@
             ProcessName.Name = "ProcessName";
             ProcessName.Size = new Size(116, 29);
             ProcessName.TabIndex = 28;
+            ProcessName.Text = "ju";
             ProcessName.TextChanged += textBox2_TextChanged;
             // 
             // ProcesId
@@ -81,6 +82,7 @@
             ProcesId.Name = "ProcesId";
             ProcesId.Size = new Size(116, 29);
             ProcesId.TabIndex = 27;
+            ProcesId.Text = "12";
             ProcesId.TextChanged += ProcesId_TextChanged;
             // 
             // label1
@@ -142,7 +144,7 @@
             Suspend_Button.FlatStyle = FlatStyle.Flat;
             Suspend_Button.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             Suspend_Button.ForeColor = Color.White;
-            Suspend_Button.Location = new Point(119, 480);
+            Suspend_Button.Location = new Point(300, 480);
             Suspend_Button.Margin = new Padding(4, 3, 4, 3);
             Suspend_Button.Name = "Suspend_Button";
             Suspend_Button.Size = new Size(259, 45);
@@ -154,9 +156,6 @@
             // Detected_Table
             // 
             Detected_Table.AllowUserToAddRows = false;
-            Detected_Table.AllowUserToOrderColumns = true;
-            Detected_Table.AllowUserToResizeColumns = false;
-            Detected_Table.AllowUserToResizeRows = false;
             Detected_Table.BackgroundColor = Color.FromArgb(15, 23, 42);
             Detected_Table.BorderStyle = BorderStyle.None;
             Detected_Table.CellBorderStyle = DataGridViewCellBorderStyle.SunkenHorizontal;
@@ -202,47 +201,49 @@
             Detected_Table.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             Detected_Table.Size = new Size(883, 353);
             Detected_Table.TabIndex = 30;
+            Detected_Table.CellClick += Detected_Table_CellClick;
             // 
             // Process_Id
             // 
             Process_Id.HeaderText = "Process Id";
             Process_Id.Name = "Process_Id";
             Process_Id.ReadOnly = true;
-            Process_Id.Width = 108;
+            Process_Id.Width = 96;
             // 
             // Process_Name
             // 
             Process_Name.HeaderText = "Process Name";
             Process_Name.Name = "Process_Name";
             Process_Name.ReadOnly = true;
-            Process_Name.Width = 158;
+            Process_Name.Width = 146;
             // 
             // Process_Path
             // 
             Process_Path.HeaderText = "Process Path";
             Process_Path.Name = "Process_Path";
             Process_Path.ReadOnly = true;
-            Process_Path.Width = 309;
+            Process_Path.Width = 297;
             // 
             // PCC
             // 
             PCC.HeaderText = "PCC";
             PCC.Name = "PCC";
             PCC.ReadOnly = true;
+            PCC.Width = 88;
             // 
             // Detection_Time
             // 
             Detection_Time.HeaderText = "Detection Time";
             Detection_Time.Name = "Detection_Time";
             Detection_Time.ReadOnly = true;
-            Detection_Time.Width = 128;
+            Detection_Time.Width = 116;
             // 
             // Status
             // 
             Status.HeaderText = "Status";
             Status.Name = "Status";
             Status.ReadOnly = true;
-            Status.Width = 128;
+            Status.Width = 116;
             // 
             // DetectionResultActionForm
             // 
@@ -272,7 +273,6 @@
         #endregion
 
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox ProcessName;
         private System.Windows.Forms.TextBox ProcesId;
         private System.Windows.Forms.Label label1;

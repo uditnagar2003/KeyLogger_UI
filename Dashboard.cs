@@ -59,15 +59,20 @@ namespace KLDS
             List<KeyLoggerInfo> keylog = await keyLogService.GetKeyLogsAsync(User_Session.UserId);
             int totalKeyLogs = keylog.Count;
             int suspendedKeyLogs = keylog.Count(x => x.Status == "Suspended");
-            int activeKeyLogs = keylog.Count(x => x.Status != "Active");
+            Debug.WriteLine("Suspended Key Logs: " + suspendedKeyLogs);
+            int activeKeyLogs = keylog.Count(x => x.Status == "Active");
             System.Drawing.Image image = System.Drawing.Image.FromFile("E:\\final project\\KLDS_UI\\virus (1).png");
             if (keylog != null && keylog.Count > 0)
             {
+               int i = 0;
                 foreach (var result in keylog)
                 {
                     //  var row = new DataGridViewRow();
+                 
                     //    row.CreateCells(result.ProcessId, result.ProcessName, result.ExecutablePath, result.Correlation);
-                    Key_Log.Rows.Add(image,result.process_id.ToString(), result.Process_Name, result.Location, result.Detection_Time, result.Action);
+                    Key_Log.Rows.Add(image,result.process_id.ToString(), result.Process_Name, result.Location, result.Detection_Time, result.Status);
+                    setcolor(i, result.Status);
+                    i++;
                 }
             }
             else
@@ -98,6 +103,19 @@ namespace KLDS
                 }
             });*/
 
+        }
+
+        private void setcolor(int i,string status)
+        {
+           if(status == "Suspended")
+            {
+                Key_Log.Rows[i].Cells[5].Style.ForeColor = Color.Green;
+            }
+            else
+            {
+                Key_Log.Rows[i].Cells[5].Style.ForeColor = Color.Red;
+            }
+           
         }
 
         private void Dashboard_Load(object sender, EventArgs e)

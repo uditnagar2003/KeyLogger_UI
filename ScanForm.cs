@@ -42,6 +42,7 @@ namespace KLDS
                 Anchor = AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom
             };
             this.Controls.Add(verticalMask);
+            verticalMask.BringToFront();
         }
 
         private void InitializeExperiment()
@@ -93,29 +94,31 @@ namespace KLDS
         private void ExperimentCOntroller_ProcessWriteInfo(object? sender, ProcessWriteInfoData e)
         {
             //Debug.WriteLine($" Process Id :{e.Id} \n Process Name:{e.Name}\n Process Count:{e.WriteCount}");
-          Process_Scanned.Rows.Add(e.Id, e.Name,e.ExecutablePath, e.WriteCount);
-           Process_Scanned.FirstDisplayedScrollingRowIndex = Process_Scanned.Rows.Count - 1;
+            Process_Scanned.Rows.Add(e.Id, e.Name, e.ExecutablePath, e.WriteCount);
+            Process_Scanned.FirstDisplayedScrollingRowIndex = Process_Scanned.Rows.Count - 1;
         }
 
         private void UpdateProgressBar(int value, int maximum)
         {
             // ToolStripItems don't have InvokeRequired, check the parent StatusStrip
-           // if (statusStrip1.InvokeRequired)
-          //  {
-              //  statusStrip1.BeginInvoke(new Action(() =>
-              //  {
-                    progressBar1.Maximum = Math.Max(1, maximum); // Ensure maximum is at least 1
-                    progressBar1.Value = Math.Max(0, Math.Min(value, progressBar1.Maximum)); // Clamp value
-                    Percentage.Text = $"{(progressBar1.Value/progressBar1.Maximum)*100}%"; // Update percentage text
-                    progressBar1.Visible = (maximum > 0 && value < maximum); // Show only when running and max is valid
-               // }));
-         /*   }
-            else
-            {
-                progressBar1.Maximum = Math.Max(1, maximum);
-                progressBar1.Value = Math.Max(0, Math.Min(value, progressBar1.Maximum));
-                progressBar1.Visible = (maximum > 0 && value < maximum);
-            }*/
+            // if (statusStrip1.InvokeRequired)
+            //  {
+            //  statusStrip1.BeginInvoke(new Action(() =>
+            //  {
+            progressBar1.Maximum = Math.Max(1, maximum); // Ensure maximum is at least 1
+            progressBar1.Value = Math.Max(0, Math.Min(value, progressBar1.Maximum));
+            double percent = ((double)progressBar1.Value / progressBar1.Maximum) * 100; ;// Clamp value
+            Debug.WriteLine($"ProgressBar Updated: Value={value}, Maximum={percent}");
+            Percentage.Text = $"{percent}%"; // Update percentage text
+            progressBar1.Visible = (maximum > 0 && value < maximum); // Show only when running and max is valid
+                                                                     // }));
+            /*   }
+               else
+               {
+                   progressBar1.Maximum = Math.Max(1, maximum);
+                   progressBar1.Value = Math.Max(0, Math.Min(value, progressBar1.Maximum));
+                   progressBar1.Visible = (maximum > 0 && value < maximum);
+               }*/
         }
 
         private void SetButtonsEnabled(bool startEnabled, bool stopEnabled)
@@ -185,7 +188,7 @@ namespace KLDS
             string message = $"Detection complete. Found {detectedCount} potential keylogger(s) matching criteria.\n\nSee '{_currentConfig.ResultsFilePath}' for details.";
             MessageBoxIcon icon = detectedCount > 0 ? MessageBoxIcon.Warning : MessageBoxIcon.Information;
 
-           if(DialogResult.OK== MessageBox.Show(this, message, "Detection Complete", MessageBoxButtons.OK, icon))
+            if (DialogResult.OK == MessageBox.Show(this, message, "Detection Complete", MessageBoxButtons.OK, icon))
             {
                 DetectionResultActionForm(results);
             }// Specify owner window
@@ -194,8 +197,8 @@ namespace KLDS
 
         private void DetectionResultActionForm(List<DetectionResult> results)
         {
-           
-          _dashboardForm.loadform(new DetectionResultActionForm(results)); // Show results in a modal dialog
+
+            _dashboardForm.loadform(new DetectionResultActionForm(results)); // Show results in a modal dialog
         }
 
         private void ExperimentController_ProgressUpdated(object? sender, (int current, int total) progress)
@@ -269,6 +272,11 @@ namespace KLDS
             // UI updates (status, buttons) will be handled by the cancellation/completion events from the controller.
             UpdateStatus("Stop requested..."); // Give immediate feedback
             Stop_Button.Enabled = false; // Disable stop button immediately after clicking
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

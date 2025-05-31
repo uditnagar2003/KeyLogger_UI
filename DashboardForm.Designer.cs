@@ -1,4 +1,5 @@
-﻿namespace KLDS
+﻿
+namespace KLDS
 {
     partial class DashboardForm
     {
@@ -63,7 +64,7 @@
             menu_panel.Location = new Point(0, 0);
             menu_panel.Margin = new Padding(4, 3, 4, 3);
             menu_panel.Name = "menu_panel";
-            menu_panel.Size = new Size(220, 570);
+            menu_panel.Size = new Size(220, 610);
             menu_panel.TabIndex = 0;
             // 
             // pictureBox1
@@ -72,7 +73,7 @@
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(25, 7);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(46, 45);
+            pictureBox1.Size = new Size(46, 85);
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
             // 
@@ -88,7 +89,7 @@
             Scan_Button.Margin = new Padding(4, 3, 4, 3);
             Scan_Button.Name = "Scan_Button";
             Scan_Button.Padding = new Padding(10, 0, 0, 0);
-            Scan_Button.Size = new Size(219, 48);
+            Scan_Button.Size = new Size(215, 48);
             Scan_Button.TabIndex = 3;
             Scan_Button.Text = " Scan";
             Scan_Button.TextAlign = ContentAlignment.MiddleLeft;
@@ -121,7 +122,7 @@
             Setting_Button.Margin = new Padding(4, 3, 4, 3);
             Setting_Button.Name = "Setting_Button";
             Setting_Button.Padding = new Padding(10, 0, 0, 0);
-            Setting_Button.Size = new Size(219, 48);
+            Setting_Button.Size = new Size(215, 48);
             Setting_Button.TabIndex = 5;
             Setting_Button.Text = " Setting";
             Setting_Button.TextAlign = ContentAlignment.MiddleLeft;
@@ -141,7 +142,7 @@
             Logout_Button.Margin = new Padding(4, 3, 4, 3);
             Logout_Button.Name = "Logout_Button";
             Logout_Button.Padding = new Padding(10, 0, 0, 0);
-            Logout_Button.Size = new Size(219, 48);
+            Logout_Button.Size = new Size(215, 48);
             Logout_Button.TabIndex = 4;
             Logout_Button.Text = " Logout";
             Logout_Button.TextAlign = ContentAlignment.MiddleLeft;
@@ -161,7 +162,7 @@
             Dashboard_Button.Margin = new Padding(4, 3, 4, 3);
             Dashboard_Button.Name = "Dashboard_Button";
             Dashboard_Button.Padding = new Padding(10, 0, 0, 0);
-            Dashboard_Button.Size = new Size(219, 48);
+            Dashboard_Button.Size = new Size(215, 48);
             Dashboard_Button.TabIndex = 2;
             Dashboard_Button.Text = " Dashboard";
             Dashboard_Button.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -181,7 +182,7 @@
             User_Button.Margin = new Padding(4, 3, 4, 3);
             User_Button.Name = "User_Button";
             User_Button.Padding = new Padding(10, 0, 0, 0);
-            User_Button.Size = new Size(219, 48);
+            User_Button.Size = new Size(215, 48);
             User_Button.TabIndex = 1;
             User_Button.Text = " Hi User";
             User_Button.TextAlign = ContentAlignment.MiddleLeft;
@@ -194,12 +195,12 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 17F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(78, 14);
+            label1.Location = new Point(78, 20);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(74, 26);
+            label1.Size = new Size(60, 26);
             label1.TabIndex = 0;
-            label1.Text = "KLDS";
+            label1.Text = "KDS";
             label1.Click += label1_Click;
             // 
             // Top_pannel
@@ -221,7 +222,7 @@
             label2.BackColor = Color.FromArgb(15, 23, 42);
             label2.Font = new Font("Segoe UI", 15F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(25, 14);
+            label2.Location = new Point(0, 8);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(279, 24);
@@ -236,10 +237,12 @@
             Exit_Button.Location = new Point(857, 3);
             Exit_Button.Margin = new Padding(4, 3, 4, 3);
             Exit_Button.Name = "Exit_Button";
-            Exit_Button.Size = new Size(43, 50);
+            Exit_Button.Size = new Size(43, 44);
             Exit_Button.TabIndex = 7;
             Exit_Button.Text = "X";
             Exit_Button.UseVisualStyleBackColor = true;
+            Exit_Button.Click += Exit_Button_Click;
+            Exit_Button.MouseHover += Exit_Button_MouseHover;
             // 
             // mainpanel
             // 
@@ -248,7 +251,7 @@
             mainpanel.Location = new Point(220, 50);
             mainpanel.Margin = new Padding(4, 3, 4, 3);
             mainpanel.Name = "mainpanel";
-            mainpanel.Size = new Size(900, 520);
+            mainpanel.Size = new Size(900, 560);
             mainpanel.TabIndex = 6;
             mainpanel.Paint += mainpanel_Paint;
             // 
@@ -256,13 +259,14 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1120, 570);
+            ClientSize = new Size(1120, 610);
             Controls.Add(mainpanel);
             Controls.Add(Top_pannel);
             Controls.Add(menu_panel);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 3, 4, 3);
             Name = "DashboardForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "DashboardForm";
             menu_panel.ResumeLayout(false);
             menu_panel.PerformLayout();
@@ -272,6 +276,7 @@
             ResumeLayout(false);
 
         }
+
 
         #endregion
 
