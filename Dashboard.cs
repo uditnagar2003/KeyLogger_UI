@@ -142,6 +142,19 @@ namespace KLDS
         {
 
         }
+        private void Key_Log_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var cell = Key_Log.Rows[e.RowIndex].Cells[5];
+            if (cell.Value.ToString() == "Suspended")
+            {
+                cell.Style.SelectionForeColor = Color.Green;
+            }
+            else
+            {
+               
+                cell.Style.SelectionForeColor = Color.Red;
+            }
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {

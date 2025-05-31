@@ -149,6 +149,7 @@ namespace KLDS
             Key_Log.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             Key_Log.Size = new Size(883, 279);
             Key_Log.TabIndex = 22;
+            Key_Log.CellClick += Key_Log_CellClick;
             // 
             // Process_Id
             // 
@@ -416,6 +417,8 @@ namespace KLDS
             PerformLayout();
 
         }
+
+       
 
         #endregion
         private System.Windows.Forms.Label User_id;

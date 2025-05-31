@@ -127,7 +127,15 @@ namespace KLDS
             Debug.WriteLine("selectedRowInde detected tablex" + selectedRowIndex);
             ProcesId.Text = Detected_Table.Rows[selectedRowIndex].Cells[1].Value.ToString();
             ProcessName.Text = Detected_Table.Rows[selectedRowIndex].Cells[2].Value.ToString();
-            
+            var cell  = Detected_Table.Rows[selectedRowIndex].Cells[6];
+            if (cell.Value =="Suspended")
+            {
+                cell.Style.SelectionForeColor = Color.Green;
+            }
+            else
+            {
+                cell.Style.SelectionForeColor = Color.Red;
+            }
 
         }
 
