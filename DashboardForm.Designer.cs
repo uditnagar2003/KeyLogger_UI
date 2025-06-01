@@ -201,7 +201,7 @@ namespace KLDS
             label1.Size = new Size(62, 28);
             label1.TabIndex = 0;
             label1.Text = "KDS";
-            label1.Click += label1_Click;
+
             // 
             // Top_pannel
             // 
@@ -253,7 +253,7 @@ namespace KLDS
             mainpanel.Name = "mainpanel";
             mainpanel.Size = new Size(900, 560);
             mainpanel.TabIndex = 6;
-            mainpanel.Paint += mainpanel_Paint;
+         
             // 
             // DashboardForm
             // 

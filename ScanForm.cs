@@ -211,31 +211,16 @@ namespace KLDS
             UpdateStatus(status);
         }
 
-        private void progressBar1_Click(object sender, EventArgs e)
-        {
+        
+      
 
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Percentage_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void ScanForm_Load(object sender, EventArgs e)
         {
 
         }
-
-        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
+          
         private async void Start_Button_Click(object sender, EventArgs e)
         {
             if (DialogResult.Yes == MessageBox.Show("Are you sure you want to start scanning?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
@@ -286,9 +271,6 @@ namespace KLDS
             
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

@@ -57,7 +57,7 @@
             label3.TabIndex = 18;
             label3.Text = "Number of interval";
             label3.TextAlign = ContentAlignment.MiddleLeft;
-            label3.Click += label3_Click;
+
             // 
             // Algorithm
             // 
@@ -114,7 +114,7 @@
             label6.TabIndex = 22;
             label6.Text = "Min Keystroke Per Interval";
             label6.TextAlign = ContentAlignment.MiddleLeft;
-            label6.Click += label6_Click;
+         
             // 
             // Number_of_Interval
             // 

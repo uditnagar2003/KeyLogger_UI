@@ -69,7 +69,7 @@ namespace KLDS
                 //    row.CreateCells(result.ProcessId, result.ProcessName, result.ExecutablePath, result.Correlation);
                 if (result.IsDetected)
                 {
-                    Detected_Table.Rows.Add(image, result.ProcessId, result.ProcessName, result.ExecutablePath, result.Correlation, DateTime.Now, "Active");
+                    Detected_Table.Rows.Add(image, result.ProcessId, result.ProcessName, result.ExecutablePath, result.Correlation,result.DetectionTime, "Active");
                     setcolor(i, "Active");
                     i++;
                 }
@@ -83,7 +83,7 @@ namespace KLDS
                     process_id = result.ProcessId,
                     Process_Name = result.ProcessName,
                     Location = result.ExecutablePath,
-                    Detection_Time = DateTime.Now,
+                    Detection_Time = result.DetectionTime,
                     User_Id = User_Session.UserId,
                     Action = "Ignored",
                     Status = "Active"
@@ -93,16 +93,6 @@ namespace KLDS
             }
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
         private void setcolor(int i, string status)
         {
             if (status == "Suspended")
@@ -123,11 +113,15 @@ namespace KLDS
 
         private void Detected_Table_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+           
             int selectedRowIndex = e.RowIndex;
             Debug.WriteLine("selectedRowInde detected tablex" + selectedRowIndex);
             ProcesId.Text = Detected_Table.Rows[selectedRowIndex].Cells[1].Value.ToString();
             ProcessName.Text = Detected_Table.Rows[selectedRowIndex].Cells[2].Value.ToString();
-            var cell  = Detected_Table.Rows[selectedRowIndex].Cells[6];
+            var cell = Detected_Table.Rows[selectedRowIndex].Cells[6];
+           // Detected_Table.CurrentCell = null;
+           
+
             if (cell.Value =="Suspended")
             {
                 cell.Style.SelectionForeColor = Color.Green;
@@ -182,28 +176,19 @@ namespace KLDS
                     });
 
                 }
-                MessageBox.Show("Detected Keylogger information sent successfully!");
-                MessageBox.Show("Settings saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("Detected Keylogger information sent successfully!");
+                MessageBox.Show("Detected Keylogger information saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("REsults not saved.", "Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Results not saved.", "Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             // Skip the last row if it's a new row (used for inserting new data)
 
             // Detected_Table.Rows[selectedRowIndex].Cells[4].Value = "Ignore";
         }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ProcesId_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+       
         
     }
 }

@@ -82,28 +82,15 @@ namespace KLDS
             Total.Text = totalKeyLogs.ToString();
             Suspended.Text = suspendedKeyLogs.ToString();
             Active.Text = activeKeyLogs.ToString();
-            /*
-            {
-                if (task.IsCompletedSuccessfully)
-                {
-                    var keyLogs = task.Result;
-                    if ()
-                    {
-                        dataGridView1.DataSource = keyLogs;
-                        dataGridView1.Columns["id"].Visible = false; // Hide the id column
-                    }
-                    else
-                    {
-                        MessageBox.Show("No key logs found for this user.");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Failed to load key logs. Please try again later.");
-                }
-            });*/
+          
 
         }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+           
+        }
+
 
         private void setcolor(int i,string status)
         {
@@ -118,30 +105,6 @@ namespace KLDS
            
         }
 
-        private void Dashboard_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         private void Key_Log_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             var cell = Key_Log.Rows[e.RowIndex].Cells[5];
@@ -161,9 +124,6 @@ namespace KLDS
             dashboardForm.loadform(new ScanForm(dashboardForm));
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        
     }
 }

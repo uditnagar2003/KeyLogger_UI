@@ -66,16 +66,7 @@ namespace KLDS
             loginForm.Show();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mainpanel_Paint(object sender, PaintEventArgs e)
-        {
-
-
-        }
+       
         private void Exit_Button_MouseHover(object sender, EventArgs e)
         {
             this.Exit_Button.BackColor = Color.Red;

@@ -101,6 +101,7 @@ namespace KLDS
             // Key_Log
             // 
             Key_Log.AllowUserToAddRows = false;
+            Key_Log.AllowUserToDeleteRows = false;
             Key_Log.AllowUserToOrderColumns = true;
             Key_Log.AllowUserToResizeColumns = false;
             Key_Log.AllowUserToResizeRows = false;
@@ -113,7 +114,6 @@ namespace KLDS
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(15, 23, 42);
-            dataGridViewCellStyle1.SelectionForeColor = Color.Empty;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             Key_Log.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             Key_Log.ColumnHeadersHeight = 50;
@@ -124,7 +124,7 @@ namespace KLDS
             dataGridViewCellStyle2.Font = new Font("Segoe UI Semilight", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle2.ForeColor = Color.FromArgb(15, 23, 42);
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(15, 23, 42);
-            dataGridViewCellStyle2.SelectionForeColor = Color.Empty;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             Key_Log.DefaultCellStyle = dataGridViewCellStyle2;
             Key_Log.EnableHeadersVisualStyles = false;
@@ -141,7 +141,6 @@ namespace KLDS
             dataGridViewCellStyle3.Font = new Font("Segoe UI Semilight", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle3.ForeColor = Color.White;
             dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(15, 23, 42);
-            dataGridViewCellStyle3.SelectionForeColor = Color.Empty;
             Key_Log.RowsDefaultCellStyle = dataGridViewCellStyle3;
             Key_Log.RowTemplate.Height = 50;
             Key_Log.RowTemplate.ReadOnly = true;
@@ -185,8 +184,6 @@ namespace KLDS
             Action.Name = "Action";
             Action.ReadOnly = true;
             Action.Width = 128;
-            Action.CellTemplate.Style.Font = new Font("Segoe UI Semilight", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-
             // 
             // panel1
             // 
@@ -204,7 +201,6 @@ namespace KLDS
             panel1.Name = "panel1";
             panel1.Size = new Size(900, 238);
             panel1.TabIndex = 23;
-            panel1.Paint += panel1_Paint;
             // 
             // panel4
             // 
@@ -260,7 +256,6 @@ namespace KLDS
             panel3.Name = "panel3";
             panel3.Size = new Size(250, 100);
             panel3.TabIndex = 30;
-            panel3.Paint += panel3_Paint;
             // 
             // pictureBox2
             // 
@@ -283,7 +278,6 @@ namespace KLDS
             Active.Size = new Size(100, 33);
             Active.TabIndex = 29;
             Active.Text = "50";
-            Active.TextChanged += textBox3_TextChanged;
             // 
             // textBox4
             // 
@@ -384,7 +378,6 @@ namespace KLDS
             label2.TabIndex = 11;
             label2.Text = "Keylogger Detection Dashboard";
             label2.TextAlign = ContentAlignment.TopCenter;
-            label2.Click += label2_Click_1;
             // 
             // Dashboard
             // 
@@ -418,7 +411,7 @@ namespace KLDS
 
         }
 
-       
+
 
         #endregion
         private System.Windows.Forms.Label User_id;

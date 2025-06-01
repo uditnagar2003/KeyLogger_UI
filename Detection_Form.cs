@@ -50,16 +50,6 @@ namespace KLDS
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Save_Button_Click(object sender, EventArgs e)
         {
             if (DialogResult.Yes == MessageBox.Show("Are you sure you want to save the settings?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
@@ -71,21 +61,7 @@ namespace KLDS
                 _config.MinKeysPerIntervalKmin = int.Parse(Key_Min.Text);
                 _config.index_algo = Algorithm.SelectedIndex;
                 Debug.WriteLine($"Selected Algorithm Index: {_config.index_algo}");
-               /* switch (index)
-                {
-                    case 0:
-                        _config.Algoritm_Name = new RandomFixedRangePatternAlgorithm(); ;
-                        break;
-                    case 1:
-                        _config.Algoritm_Name = new ImpulsePatternAlgorithm(); ;
-                        break;
-                    case 2:
-                        _config.Algoritm_Name = new SineWavePatternAlgorithm(); ;
-                        break;
-                    default:
-                        MessageBox.Show("Please select a valid algorithm.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                }*/
+            
                 Debug.WriteLine($"Algortithm selected {Algorithm.SelectedIndex}");
                 string Serialized_Setting = JsonSerializer.Serialize(_config, new JsonSerializerOptions { WriteIndented = true });
                 string Setting_file_Path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Base_Configuration.json");

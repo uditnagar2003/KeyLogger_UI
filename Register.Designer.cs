@@ -48,9 +48,9 @@
             label2.Location = new Point(175, 30);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(190, 37);
+            label2.Size = new Size(210, 37);
             label2.TabIndex = 20;
-            label2.Text = "User Details";
+            label2.Text = "Register User";
             label2.TextAlign = ContentAlignment.TopCenter;
             // 
             // UserName
@@ -166,7 +166,6 @@
             label1.TabIndex = 25;
             label1.Text = "User Name :";
             label1.TextAlign = ContentAlignment.MiddleLeft;
-            label1.Click += label1_Click;
             // 
             // Register
             // 

@@ -54,7 +54,6 @@
             // 
             Stop_Button.BackColor = Color.FromArgb(239, 68, 68);
             Stop_Button.Cursor = Cursors.Hand;
-            Stop_Button.FlatAppearance.BorderSize = 0;
             Stop_Button.FlatStyle = FlatStyle.Flat;
             Stop_Button.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             Stop_Button.ForeColor = Color.White;
@@ -75,7 +74,6 @@
             // 
             Start_Button.BackColor = Color.FromArgb(2, 132, 199);
             Start_Button.Cursor = Cursors.Hand;
-            Start_Button.FlatAppearance.BorderSize = 0;
             Start_Button.FlatStyle = FlatStyle.Flat;
             Start_Button.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             Start_Button.ForeColor = Color.White;
@@ -106,7 +104,6 @@
             Percentage.TabIndex = 32;
             Percentage.Text = "Percentage";
             Percentage.TextAlign = ContentAlignment.MiddleLeft;
-            Percentage.Click += Percentage_Click;
             // 
             // panel2
             // 
@@ -132,7 +129,6 @@
             label2.TabIndex = 36;
             label2.Text = "Process Being Processed";
             label2.TextAlign = ContentAlignment.MiddleLeft;
-            label2.Click += label2_Click;
             // 
             // progressBar1
             // 

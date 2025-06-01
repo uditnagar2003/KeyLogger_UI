@@ -51,12 +51,12 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 17.75F, FontStyle.Bold | FontStyle.Italic);
+            label2.Font = new Font("Segoe UI Semibold", 18.75F, FontStyle.Bold | FontStyle.Italic);
             label2.ForeColor = Color.White;
             label2.Location = new Point(394, 35);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(145, 32);
+            label2.Size = new Size(150, 35);
             label2.TabIndex = 9;
             label2.Text = "User Details";
             label2.TextAlign = ContentAlignment.TopCenter;
@@ -153,7 +153,6 @@
             label3.TabIndex = 19;
             label3.Text = "E-Mail :";
             label3.TextAlign = ContentAlignment.MiddleLeft;
-            label3.Click += label3_Click;
             // 
             // pictureBox1
             // 

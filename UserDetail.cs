@@ -26,54 +26,11 @@ namespace KLDS
             EMail.Text = User_Session.Email;
         }
 
-        private void mainpanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void UserDetail_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void Edit_Button_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Save_Button_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Back_Button_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }
