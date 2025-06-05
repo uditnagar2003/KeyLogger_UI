@@ -41,11 +41,15 @@
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
             pictureBox4 = new PictureBox();
+            pictureBox5 = new PictureBox();
+            label5 = new Label();
+            Phone_Number = new TextBox();
             flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
             // label2
@@ -66,6 +70,7 @@
             flowLayoutPanel2.Controls.Add(User_id);
             flowLayoutPanel2.Controls.Add(User_Name);
             flowLayoutPanel2.Controls.Add(EMail);
+            flowLayoutPanel2.Controls.Add(Phone_Number);
             flowLayoutPanel2.FlowDirection = FlowDirection.RightToLeft;
             flowLayoutPanel2.Font = new Font("Microsoft Sans Serif", 72F, FontStyle.Regular, GraphicsUnit.Point, 0);
             flowLayoutPanel2.Location = new Point(391, 114);
@@ -189,12 +194,49 @@
             pictureBox4.TabIndex = 24;
             pictureBox4.TabStop = false;
             // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(193, 254);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(30, 30);
+            pictureBox5.TabIndex = 26;
+            pictureBox5.TabStop = false;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Semilight", 14.25F);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(232, 254);
+            label5.Margin = new Padding(6);
+            label5.Name = "label5";
+            label5.Padding = new Padding(4, 3, 4, 3);
+            label5.RightToLeft = RightToLeft.No;
+            label5.Size = new Size(152, 31);
+            label5.TabIndex = 25;
+            label5.Text = "Phone Number :";
+            label5.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // Phone_Number
+            // 
+            Phone_Number.Enabled = false;
+            Phone_Number.Font = new Font("Segoe UI Semilight", 14.25F);
+            Phone_Number.Location = new Point(3, 141);
+            Phone_Number.Margin = new Padding(4, 3, 4, 3);
+            Phone_Number.Multiline = true;
+            Phone_Number.Name = "Phone_Number";
+            Phone_Number.Size = new Size(353, 37);
+            Phone_Number.TabIndex = 4;
+            // 
             // UserDetail
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 23, 42);
             ClientSize = new Size(920, 519);
+            Controls.Add(pictureBox5);
+            Controls.Add(label5);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
@@ -217,6 +259,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
             PerformLayout();
 
@@ -236,5 +279,8 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
+        private TextBox Phone_Number;
+        private PictureBox pictureBox5;
+        private Label label5;
     }
 }

@@ -61,7 +61,8 @@ namespace KLDS
             int suspendedKeyLogs = keylog.Count(x => x.Status == "Suspended");
             Debug.WriteLine("Suspended Key Logs: " + suspendedKeyLogs);
             int activeKeyLogs = keylog.Count(x => x.Status == "Active");
-            System.Drawing.Image image = System.Drawing.Image.FromFile("E:\\final project\\KLDS_UI\\virus (1).png");
+            string Red_image = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "virus (1).png");
+            System.Drawing.Image image = System.Drawing.Image.FromFile(Red_image);
             if (keylog != null && keylog.Count > 0)
             {
                int i = 0;

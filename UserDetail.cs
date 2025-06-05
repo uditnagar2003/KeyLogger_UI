@@ -24,6 +24,7 @@ namespace KLDS
             User_id.Text = User_Session.UserId.ToString();// User_Session.UserId.ToString();
             User_Name.Text = User_Session.Name;
             EMail.Text = User_Session.Email;
+            Phone_Number.Text = User_Session.Phone_Number.ToString();
         }
 
         private void UserDetail_Load(object sender, EventArgs e)

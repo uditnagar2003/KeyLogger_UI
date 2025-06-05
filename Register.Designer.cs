@@ -38,6 +38,9 @@
             label5 = new Label();
             label3 = new Label();
             label1 = new Label();
+            Exit_Button = new Button();
+            Phone_NUmber = new TextBox();
+            label6 = new Label();
             SuspendLayout();
             // 
             // label2
@@ -98,7 +101,7 @@
             Save_Button.FlatStyle = FlatStyle.Flat;
             Save_Button.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
             Save_Button.ForeColor = Color.White;
-            Save_Button.Location = new Point(98, 436);
+            Save_Button.Location = new Point(98, 517);
             Save_Button.Margin = new Padding(4, 3, 4, 3);
             Save_Button.Name = "Save_Button";
             Save_Button.Size = new Size(353, 38);
@@ -167,12 +170,53 @@
             label1.Text = "User Name :";
             label1.TextAlign = ContentAlignment.MiddleLeft;
             // 
+            // Exit_Button
+            // 
+            Exit_Button.FlatStyle = FlatStyle.Flat;
+            Exit_Button.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            Exit_Button.ForeColor = Color.FromArgb(15, 23, 42);
+            Exit_Button.Location = new Point(499, 0);
+            Exit_Button.Margin = new Padding(4, 3, 4, 3);
+            Exit_Button.Name = "Exit_Button";
+            Exit_Button.Size = new Size(43, 44);
+            Exit_Button.TabIndex = 26;
+            Exit_Button.Text = "X";
+            Exit_Button.UseVisualStyleBackColor = true;
+            Exit_Button.Click += Exit_Button_Click;
+            // 
+            // Phone_NUmber
+            // 
+            Phone_NUmber.Font = new Font("Segoe UI", 14.25F);
+            Phone_NUmber.Location = new Point(98, 448);
+            Phone_NUmber.Margin = new Padding(4, 3, 4, 3);
+            Phone_NUmber.Name = "Phone_NUmber";
+            Phone_NUmber.Size = new Size(353, 33);
+            Phone_NUmber.TabIndex = 27;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Italic);
+            label6.ForeColor = Color.FromArgb(15, 23, 42);
+            label6.Location = new Point(98, 413);
+            label6.Margin = new Padding(6);
+            label6.Name = "label6";
+            label6.Padding = new Padding(4, 3, 4, 3);
+            label6.RightToLeft = RightToLeft.No;
+            label6.Size = new Size(123, 26);
+            label6.TabIndex = 28;
+            label6.Text = "Phone Number";
+            label6.TextAlign = ContentAlignment.MiddleLeft;
+            // 
             // Register
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(541, 524);
+            ClientSize = new Size(541, 624);
+            Controls.Add(Phone_NUmber);
+            Controls.Add(label6);
+            Controls.Add(Exit_Button);
             Controls.Add(Password);
             Controls.Add(Email);
             Controls.Add(Confirm_Password);
@@ -185,6 +229,7 @@
             Controls.Add(Save_Button);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Register";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Register";
             ResumeLayout(false);
             PerformLayout();
@@ -202,5 +247,8 @@
         private Label label5;
         private Label label3;
         private Label label1;
+        private Button Exit_Button;
+        private TextBox Phone_NUmber;
+        private Label label6;
     }
 }

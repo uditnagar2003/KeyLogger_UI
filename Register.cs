@@ -1,4 +1,5 @@
 ﻿using Client_Library;
+using keylogger_lib.DTO;
 using KLDS;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,11 @@ namespace KLDS_UI
         {
             if (!(Password.Text == Confirm_Password.Text))
             {
-                MessageBox.Show("Passoword don't Match?", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                MessageBox.Show("Passoword don't Match?", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if(Phone_NUmber.TextLength!=10)
+            {
+                MessageBox.Show("Phone Number should be of 10 digits", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -34,7 +39,7 @@ namespace KLDS_UI
                 {
                     Debug.WriteLine("UserName: " + UserName.Text);
 
-                    bool registered = await authService.RegisterAsync(UserName.Text, Email.Text, Password.Text, Confirm_Password.Text);
+                    bool registered = await authService.RegisterAsync(UserName.Text, Email.Text, Password.Text, Confirm_Password.Text, long.Parse(Phone_NUmber.Text));
                     if (registered)
                     {
                         if (DialogResult.OK == MessageBox.Show("Account created successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information))
@@ -54,6 +59,11 @@ namespace KLDS_UI
                 }
             }
         }
-       
+
+        private void Exit_Button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Login_Form().Show();
+        }
     }
 }

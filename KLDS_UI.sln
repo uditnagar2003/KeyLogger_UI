@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client_Library", "..\Client
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "keylogger lib", "..\keylogger lib\keylogger lib.csproj", "{92186204-FF7A-82C3-EDAC-CD2D47E84B3E}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "KLDS_", "..\KLDS_\KLDS_.vdproj", "{7B254499-EEDC-BBAA-6BC6-7E2ECCF74FDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keylogger Core 1.0", "..\Keylogger Core 1.0\Keylogger Core 1.0.csproj", "{A9CD15F7-3A57-4B01-A980-AFD11397DD17}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,12 @@ Global
 		{92186204-FF7A-82C3-EDAC-CD2D47E84B3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92186204-FF7A-82C3-EDAC-CD2D47E84B3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92186204-FF7A-82C3-EDAC-CD2D47E84B3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B254499-EEDC-BBAA-6BC6-7E2ECCF74FDE}.Debug|Any CPU.ActiveCfg = Debug
+		{7B254499-EEDC-BBAA-6BC6-7E2ECCF74FDE}.Release|Any CPU.ActiveCfg = Release
+		{A9CD15F7-3A57-4B01-A980-AFD11397DD17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9CD15F7-3A57-4B01-A980-AFD11397DD17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9CD15F7-3A57-4B01-A980-AFD11397DD17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9CD15F7-3A57-4B01-A980-AFD11397DD17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

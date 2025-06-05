@@ -57,13 +57,12 @@
             label3.TabIndex = 18;
             label3.Text = "Number of interval";
             label3.TextAlign = ContentAlignment.MiddleLeft;
-
             // 
             // Algorithm
             // 
             Algorithm.DropDownStyle = ComboBoxStyle.DropDownList;
             Algorithm.FormattingEnabled = true;
-            Algorithm.Items.AddRange(new object[] { "Random (RN)", "Impulse (IMP)", "Sine Wave (SIN)" });
+            Algorithm.Items.AddRange(new object[] { "Random Number (RN)", "Random Fixed Range (RFR) ", "Sine Wave (SIN)" });
             Algorithm.Location = new Point(495, 106);
             Algorithm.Margin = new Padding(4, 3, 4, 3);
             Algorithm.Name = "Algorithm";
@@ -114,7 +113,6 @@
             label6.TabIndex = 22;
             label6.Text = "Min Keystroke Per Interval";
             label6.TextAlign = ContentAlignment.MiddleLeft;
-         
             // 
             // Number_of_Interval
             // 

@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using VisualKeyloggerDetector;
 using VisualKeyloggerDetector.Core;
+using VisualKeyloggerDetector.Core.Utils;
 
 namespace KLDS
 {
@@ -61,7 +62,8 @@ namespace KLDS
              String setting = File.ReadAllText(Setting_file_Path);
              ExperimentConfiguration _config = JsonSerializer.Deserialize<ExperimentConfiguration>(setting, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
            */
-            System.Drawing.Image image = System.Drawing.Image.FromFile("E:\\final project\\KLDS_UI\\virus (1).png");
+            string Red_image = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "virus (1).png");
+            System.Drawing.Image image = System.Drawing.Image.FromFile(Red_image);
             int i= 0;
             foreach (var result in _results)
             {
@@ -78,18 +80,21 @@ namespace KLDS
             foreach (var result in _results)
             {
                 // Log the ignored keylogger information 
-                KeyLoggerInfo info = new KeyLoggerInfo()
+                if (result.IsDetected == true)
                 {
-                    process_id = result.ProcessId,
-                    Process_Name = result.ProcessName,
-                    Location = result.ExecutablePath,
-                    Detection_Time = result.DetectionTime,
-                    User_Id = User_Session.UserId,
-                    Action = "Ignored",
-                    Status = "Active"
-                };
-                _keyLoggerInfos.Add(info);
-
+                    KeyLoggerInfo info = new KeyLoggerInfo()
+                    {
+                        process_id = result.ProcessId,
+                        Process_Name = result.ProcessName,
+                        Location = result.ExecutablePath==null ? "Path Not Found" : result.ExecutablePath,
+                        Detection_Time = result.DetectionTime,
+                        User_Id = User_Session.UserId,
+                        average_bytes_written=(long)result.AverageBytesWrittenPerInterval,
+                       pcc_calculated=result.Correlation,
+                        Status = "Active"
+                    };
+                    _keyLoggerInfos.Add(info);
+                }
             }
         }
 
@@ -143,10 +148,19 @@ namespace KLDS
                 if (info.process_id == id)
                 {
 
-                    info.Action = "Suspended";
+                   
                     info.Status = "Suspended";
+                   // bool retu = ProcessManager.TerminateProcess((uint)info.process_id);
                     Detected_Table.Rows[selectedRowIndex].Cells[6].Value = "Suspended";
                     setcolor(selectedRowIndex,"Suspended");
+                  /*  if (retu == true)
+                    {*/
+                        MessageBox.Show($"{info.Process_Name} Suspended Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                   /* }
+                    else
+                    {
+                        MessageBox.Show($"{info.Process_Name} Failed to Suspend ", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }*/
 
 
                 }

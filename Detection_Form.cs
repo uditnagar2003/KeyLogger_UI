@@ -26,28 +26,67 @@ namespace KLDS
         public void InitializeSettings()
         {
             string Setting_file_Path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Base_Configuration.json");
+            if (!File.Exists(Setting_file_Path))
+            {
+                // If the settings file does not exist, create a default configuration
+                ExperimentConfiguration _config2 = new ExperimentConfiguration
+                {
+                    PatternLengthN = 5,
+                    IntervalDurationT = 1000,
+                    MaxKeysPerIntervalKmax = 10,
+                    MinKeysPerIntervalKmin = 1,
+                    index_algo = 0 // Default algorithm index
+                };
+                Algorithm.SelectedIndex = _config2.index_algo;
+                Number_of_Interval.Text = _config2.PatternLengthN.ToString();
+                DUration_Of_Interval.Text = _config2.IntervalDurationT.ToString();
+                Key_Max.Text = _config2.MaxKeysPerIntervalKmax.ToString();
+                Key_Min.Text = _config2.MinKeysPerIntervalKmin.ToString();
 
-            String setting = File.ReadAllText(Setting_file_Path);
-            ExperimentConfiguration _config = JsonSerializer.Deserialize<ExperimentConfiguration>(setting, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-            Algorithm.SelectedIndex = _config.index_algo;
-            Number_of_Interval.Text = _config.PatternLengthN.ToString();
-            DUration_Of_Interval.Text = _config.IntervalDurationT.ToString();
-            Key_Max.Text = _config.MaxKeysPerIntervalKmax.ToString();
-            Key_Min.Text = _config.MinKeysPerIntervalKmin.ToString();
-            
+            }
+            else
+            {
+                String setting = File.ReadAllText(Setting_file_Path);
+                ExperimentConfiguration _config = JsonSerializer.Deserialize<ExperimentConfiguration>(setting, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+                Algorithm.SelectedIndex = _config.index_algo;
+                Number_of_Interval.Text = _config.PatternLengthN.ToString();
+                DUration_Of_Interval.Text = _config.IntervalDurationT.ToString();
+                Key_Max.Text = _config.MaxKeysPerIntervalKmax.ToString();
+                Key_Min.Text = _config.MinKeysPerIntervalKmin.ToString();
+            }
         }
         private void Detection_Form_Load(object sender, EventArgs e)
         {
             string Setting_file_Path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Base_Configuration.json");
 
-            String setting = File.ReadAllText(Setting_file_Path);
-            ExperimentConfiguration _config = JsonSerializer.Deserialize<ExperimentConfiguration>(setting, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-            Algorithm.SelectedIndex = _config.index_algo;
-            Number_of_Interval.Text = _config.PatternLengthN.ToString();
-            DUration_Of_Interval.Text = _config.IntervalDurationT.ToString();
-            Key_Max.Text = _config.MaxKeysPerIntervalKmax.ToString();
-            Key_Min.Text = _config.MinKeysPerIntervalKmin.ToString();
+            if (!File.Exists(Setting_file_Path))
+            {
+                // If the settings file does not exist, create a default configuration
+                ExperimentConfiguration _config2 = new ExperimentConfiguration
+                {
+                    PatternLengthN = 5,
+                    IntervalDurationT = 1000,
+                    MaxKeysPerIntervalKmax = 10,
+                    MinKeysPerIntervalKmin = 1,
+                    index_algo = 0 // Default algorithm index
+                };
+                Algorithm.SelectedIndex = _config2.index_algo;
+                Number_of_Interval.Text = _config2.PatternLengthN.ToString();
+                DUration_Of_Interval.Text = _config2.IntervalDurationT.ToString();
+                Key_Max.Text = _config2.MaxKeysPerIntervalKmax.ToString();
+                Key_Min.Text = _config2.MinKeysPerIntervalKmin.ToString();
 
+            }
+            else
+            {
+                String setting = File.ReadAllText(Setting_file_Path);
+                ExperimentConfiguration _config = JsonSerializer.Deserialize<ExperimentConfiguration>(setting, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+                Algorithm.SelectedIndex = _config.index_algo;
+                Number_of_Interval.Text = _config.PatternLengthN.ToString();
+                DUration_Of_Interval.Text = _config.IntervalDurationT.ToString();
+                Key_Max.Text = _config.MaxKeysPerIntervalKmax.ToString();
+                Key_Min.Text = _config.MinKeysPerIntervalKmin.ToString();
+            }
         }
 
         private void Save_Button_Click(object sender, EventArgs e)

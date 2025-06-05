@@ -48,49 +48,62 @@ namespace KLDS
         private void InitializeExperiment()
         {
             string Setting_file_Path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Base_Configuration.json");
-
-            String setting = File.ReadAllText(Setting_file_Path);
-            ExperimentConfiguration _config = JsonSerializer.Deserialize<ExperimentConfiguration>(setting, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-            _currentConfig = _config;
-            if (_currentConfig.MinKeysPerIntervalKmin == 0 || _currentConfig.MaxKeysPerIntervalKmax == 0 || _currentConfig.IntervalDurationT == 0 || _currentConfig.PatternLengthN == 0)
+            if (!File.Exists(Setting_file_Path))
             {
-                MessageBox.Show("Please set the configuration parameters before starting the experiment.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                new Detection_Form().Show();
-            }
 
-            IPatternGeneratorAlgorithm algorithm = null;
-            switch (_currentConfig.index_algo)
+                MessageBox.Show("Configuration file not found. Please Set  configuration  first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Hide the form if config file is missing
+                _dashboardForm.loadform(new Detection_Form());
+                return;
+                // return;
+                // Show the detection form or any other appropriate action
+                // return; // Exit if config file is missing
+            }
+            else
             {
-                case 0:
-                    algorithm = new RandomFixedRangePatternAlgorithm();
-                    break;
-                case 1:
-                    algorithm = new ImpulsePatternAlgorithm();
-                    break;
-                case 2:
-                    algorithm = new SineWavePatternAlgorithm();
-                    break;
+                String setting = File.ReadAllText(Setting_file_Path);
+                ExperimentConfiguration _config = JsonSerializer.Deserialize<ExperimentConfiguration>(setting, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+                _currentConfig = _config;
 
+                if (_currentConfig.MinKeysPerIntervalKmin == 0 || _currentConfig.MaxKeysPerIntervalKmax == 0 || _currentConfig.IntervalDurationT == 0 || _currentConfig.PatternLengthN == 0)
+                {
+                    MessageBox.Show("Please set the configuration parameters before starting the experiment.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // new Detection_Form().Show();
+                }
+
+                IPatternGeneratorAlgorithm algorithm = null;
+                switch (_currentConfig.index_algo)
+                {
+                    case 0:
+                        algorithm = new RandomPatternAlgorithm();
+                        break;
+                    case 1:
+                        algorithm = new RandomFixedRangePatternAlgorithm();
+                        break;
+                    case 2:
+                        algorithm = new SineWavePatternAlgorithm();
+                        break;
+
+                }
+                // Dispose previous instance if any, before creating a new one
+                _experimentController?.Dispose();
+                _experimentController = new ExperimentController(_currentConfig, algorithm);
+
+                // Subscribe to events from the controller to update the UI
+                _experimentController.StatusUpdated += ExperimentController_StatusUpdated;
+                _experimentController.ProgressUpdated += ExperimentController_ProgressUpdated;
+                _experimentController.ExperimentCompleted += ExperimentController_ExperimentCompleted;
+                _experimentController.KeyloggerDetected += ExperimentController_KeyloggerDetected; // Subscribe
+                _experimentController.ProcessWriteCount += ExperimentCOntroller_ProcessWriteInfo; // Subscribe to process write count updates
+                                                                                                  //  injector.StatusUpdate += ExperimentController_StatusUpdated; // Subscribe to injector status updates
+                                                                                                  //  injector.ProgressUpdate += ExperimentController_ProgressUpdated; // Subscribe to injector progress updates
+                                                                                                  // Initial UI state
+                UpdateStatus($"Ready. Using {algorithm.GetType().Name}.");
+                SetButtonsEnabled(true, false); // Initial state: Start enabled, Stop disabled
+                UpdateProgressBar(0, 1); // Reset progress bar state
+                progressBar1.Visible = false; // Hide progress bar initially
             }
-            // Dispose previous instance if any, before creating a new one
-            _experimentController?.Dispose();
-            _experimentController = new ExperimentController(_currentConfig, algorithm);
-
-            // Subscribe to events from the controller to update the UI
-            _experimentController.StatusUpdated += ExperimentController_StatusUpdated;
-            _experimentController.ProgressUpdated += ExperimentController_ProgressUpdated;
-            _experimentController.ExperimentCompleted += ExperimentController_ExperimentCompleted;
-            _experimentController.KeyloggerDetected += ExperimentController_KeyloggerDetected; // Subscribe
-            _experimentController.ProcessWriteCount += ExperimentCOntroller_ProcessWriteInfo; // Subscribe to process write count updates
-                                                                                              //  injector.StatusUpdate += ExperimentController_StatusUpdated; // Subscribe to injector status updates
-                                                                                              //  injector.ProgressUpdate += ExperimentController_ProgressUpdated; // Subscribe to injector progress updates
-                                                                                              // Initial UI state
-            UpdateStatus($"Ready. Using {algorithm.GetType().Name}.");
-            SetButtonsEnabled(true, false); // Initial state: Start enabled, Stop disabled
-            UpdateProgressBar(0, 1); // Reset progress bar state
-            progressBar1.Visible = false; // Hide progress bar initially
         }
-
         private void ExperimentCOntroller_ProcessWriteInfo(object? sender, ProcessWriteInfoData e)
         {
             //Debug.WriteLine($" Process Id :{e.Id} \n Process Name:{e.Name}\n Process Count:{e.WriteCount}");
@@ -107,9 +120,9 @@ namespace KLDS
             //  {
             progressBar1.Maximum = Math.Max(1, maximum); // Ensure maximum is at least 1
             progressBar1.Value = Math.Max(0, Math.Min(value, progressBar1.Maximum));
-            double percent = ((double)progressBar1.Value / progressBar1.Maximum) * 100; ;// Clamp value
+            double percent = ((double)progressBar1.Value / progressBar1.Maximum) * 100; // Clamp value
             Debug.WriteLine($"ProgressBar Updated: Value={value}, Maximum={percent}");
-            Percentage.Text = $"{percent}%"; // Update percentage text
+            Percentage.Text = $"{Math.Round(percent,2)}%"; // Update percentage text
             progressBar1.Visible = (maximum > 0 && value < maximum); // Show only when running and max is valid
                                                                      // }));
             /*   }
@@ -155,14 +168,15 @@ namespace KLDS
         private void ExperimentController_KeyloggerDetected(object? sender, DetectionResult result)
         {
             // Ensure UI updates are on the correct thread
-            if (InvokeRequired)
-            {
-                Invoke(new Action(() => NotificationHelper.ShowDetectionNotification(result)));
-            }
-            else
-            {
-                NotificationHelper.ShowDetectionNotification(result);
-            }
+            /* if (InvokeRequired)
+             {
+                 Invoke(new Action(() => NotificationHelper.ShowDetectionNotification(result)));
+             }
+             else
+             {
+                 NotificationHelper.ShowDetectionNotification(result);
+             }*/
+            Debug.WriteLine("Keylogger Detected notification");
         }
 
         private void ExperimentController_ExperimentCompleted(object? sender, List<DetectionResult> results)
@@ -211,46 +225,46 @@ namespace KLDS
             UpdateStatus(status);
         }
 
-        
-      
 
-       
+
+
+
 
         private void ScanForm_Load(object sender, EventArgs e)
         {
 
         }
-          
+
         private async void Start_Button_Click(object sender, EventArgs e)
         {
             if (DialogResult.Yes == MessageBox.Show("Are you sure you want to start scanning?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-            { 
+            {
                 SetButtonsEnabled(false, true); // Disable Start, Enable Stop
-            UpdateProgressBar(0, 1); // Reset progress bar state
-            progressBar1.Visible = true;
-            UpdateStatus("Starting experiment...");
+                UpdateProgressBar(0, 1); // Reset progress bar state
+                progressBar1.Visible = true;
+                UpdateStatus("Starting experiment...");
 
-            try
-            {
-                // Ensure controller is initialized
-                if (_experimentController == null)
+                try
                 {
-                    InitializeExperiment();
+                    // Ensure controller is initialized
+                    if (_experimentController == null)
+                    {
+                        InitializeExperiment();
+                    }
+                    // Run the experiment asynchronously
+                    await _experimentController.StartExperimentAsync();
                 }
-                // Run the experiment asynchronously
-                await _experimentController.StartExperimentAsync();
-            }
-            catch (Exception ex) // Catch unexpected errors during the start sequence or experiment itself
-            {
-                MessageBox.Show(this, $"An error occurred during the experiment: {ex.Message}", "Experiment Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                UpdateStatus($"Error: {ex.Message}");
-                // Ensure UI is reset correctly on error
-                if (!_experimentController.IsRunning) // Check if controller already reset state
+                catch (Exception ex) // Catch unexpected errors during the start sequence or experiment itself
                 {
-                    SetButtonsEnabled(true, false);
-                    progressBar1.Visible = false;
+                    MessageBox.Show(this, $"An error occurred during the experiment: {ex.Message}", "Experiment Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    UpdateStatus($"Error: {ex.Message}");
+                    // Ensure UI is reset correctly on error
+                    if (!_experimentController.IsRunning) // Check if controller already reset state
+                    {
+                        SetButtonsEnabled(true, false);
+                        progressBar1.Visible = false;
+                    }
                 }
-            }
             }
             else
             {
@@ -268,9 +282,12 @@ namespace KLDS
                 Stop_Button.Enabled = false; // Disable stop button immediately after clicking
                 MessageBox.Show(this, "Scanning process has been stopped.", "Stopped", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            
+
         }
 
-        
+        private void Percentage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

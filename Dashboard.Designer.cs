@@ -232,7 +232,7 @@ namespace KLDS
             Suspended.Name = "Suspended";
             Suspended.Size = new Size(100, 33);
             Suspended.TabIndex = 29;
-            Suspended.Text = "50";
+            Suspended.Text = "0";
             // 
             // textBox6
             // 
@@ -277,7 +277,7 @@ namespace KLDS
             Active.Name = "Active";
             Active.Size = new Size(100, 33);
             Active.TabIndex = 29;
-            Active.Text = "50";
+            Active.Text = "0";
             // 
             // textBox4
             // 
@@ -321,7 +321,7 @@ namespace KLDS
             Total.Name = "Total";
             Total.Size = new Size(100, 33);
             Total.TabIndex = 29;
-            Total.Text = "50";
+            Total.Text = "0";
             // 
             // textBox1
             // 

@@ -104,6 +104,7 @@
             Percentage.TabIndex = 32;
             Percentage.Text = "Percentage";
             Percentage.TextAlign = ContentAlignment.MiddleLeft;
+            Percentage.Click += Percentage_Click;
             // 
             // panel2
             // 

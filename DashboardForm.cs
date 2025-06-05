@@ -76,6 +76,7 @@ namespace KLDS
         private void Exit_Button_Click(object sender, EventArgs e)
         {
             this.Close();
+            Dispose();
         }
     }
 }
