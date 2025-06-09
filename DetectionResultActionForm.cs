@@ -191,7 +191,12 @@ namespace KLDS
 
                 }
                 //MessageBox.Show("Detected Keylogger information sent successfully!");
-                MessageBox.Show("Detected Keylogger information saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if(DialogResult.OK==MessageBox.Show("Detected Keylogger information saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information))
+                {
+                    Ignore_Button.Enabled = false;
+                    Suspend_Button.Enabled =false;
+
+                }
             }
             else
             {

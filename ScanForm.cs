@@ -191,7 +191,7 @@ namespace KLDS
                 ExperimentCompletedUI(results);
             }
         }
-
+        
         private void ExperimentCompletedUI(List<DetectionResult> results)
         {
             SetButtonsEnabled(true, false); // Re-enable Start, disable Stop
