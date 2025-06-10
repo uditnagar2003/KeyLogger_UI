@@ -199,7 +199,7 @@ namespace KLDS
             progressBar1.Visible = false; // Hide progress bar
 
             int detectedCount = results?.Count(r => r.IsDetected) ?? 0; // Handle null results list defensively
-            string message = $"Detection complete. Found {detectedCount} potential keylogger(s) matching criteria.\n\nSee '{_currentConfig.ResultsFilePath}' for details.";
+            string message = $"Detection complete. Found {detectedCount} potential keylogger(s) matching criteria.";
             MessageBoxIcon icon = detectedCount > 0 ? MessageBoxIcon.Warning : MessageBoxIcon.Information;
 
             if (DialogResult.OK == MessageBox.Show(this, message, "Detection Complete", MessageBoxButtons.OK, icon))
